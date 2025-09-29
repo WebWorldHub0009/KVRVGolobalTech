@@ -1,0 +1,86 @@
+import React from "react";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-900 text-white pt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+
+        {/* Logo & Brief */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent 
+                         bg-gradient-to-r from-green-400 via-teal-300 to-green-400">
+            KVRV Global Tech
+          </h2>
+          <p className="text-gray-300 text-sm">
+            Smart Living, Secure Future — Automation, renewable energy, and lifestyle solutions under one roof.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4 text-green-400">Quick Links</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><a href="/" className="hover:text-green-400 transition-colors">Home</a></li>
+            <li><a href="/about" className="hover:text-green-400 transition-colors">About Us</a></li>
+            <li><a href="/solutions" className="hover:text-green-400 transition-colors">Solutions</a></li>
+            <li><a href="/projects" className="hover:text-green-400 transition-colors">Projects</a></li>
+            <li><a href="/contact" className="hover:text-green-400 transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4 text-green-400">Contact</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>CRM: 88830 10400</span></li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>Sales: 72004 49985</span></li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>Office: 95143 06044</span></li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaEnvelope /> <span>Karnataka: friendsinfrabuildtech.blr@gmail.com</span></li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaEnvelope /> <span>Tamil Nadu: Kvrvglobaltech.hsr@gmail.com</span></li>
+          </ul>
+        </div>
+
+        {/* Office Addresses */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4 text-green-400">Our Offices</h3>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
+              <FaMapMarkerAlt />
+              <div>
+                <strong>Corporate - Karnataka:</strong><br />
+                KVRV Global Tech, No:1&2, First Floor, Bhavan Complex, NH 47, Attibelle, Bangalore - 562107
+              </div>
+            </li>
+            <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
+              <FaMapMarkerAlt />
+              <div>
+                <strong>Branch - Tamil Nadu:</strong><br />
+                KVRV GLOBAL TECH, Shop No: 03, Ground Floor, Sunnambu Jeebi, Hosur, Krishnagiri - 635109
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="border-t border-gray-700 text-center py-6 mt-10 text-gray-400 text-sm justify-center items-center gap-2 md:gap-4 pt-6 text-center flex flex-col gap-1">
+        <span>&copy; {new Date().getFullYear()} KVRV Global Tech. All Rights Reserved.</span>
+        <a href="https://www.behance.net/" className="hover:text-green-400 transition-colors">Design Inspiration</a>
+        <span>
+          Developed & Designed by{" "}
+          <a
+            href="https://webworldhub.co.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-400 hover:text-yellow-400 font-semibold transition-colors"
+          >
+            Web World Hub
+          </a>
+        </span>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

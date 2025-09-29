@@ -1,0 +1,61 @@
+import React from 'react';
+import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
+
+function Contact() {
+  return (
+    <section id="contact" className="py-20 bg-gray-900 text-white px-4">
+      <div className="max-w-3xl mx-auto text-center">
+        {/* Gradient Heading */}
+        <h3 className="text-3xl md:text-4xl font-extrabold mb-6
+                       bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-300 to-green-400
+                       animate-gradient-x">
+          Get in Touch
+        </h3>
+
+        {/* Contact Info */}
+        <div className="mb-8 space-y-2 text-gray-300">
+          <p className="flex items-center justify-center gap-2">
+            <FiPhone className="text-green-400 w-5 h-5" /> +91 72004 49985 | +91 88830 10400
+          </p>
+          <p className="flex items-center justify-center gap-2">
+            <FiMail className="text-green-400 w-5 h-5" /> info@kvrvglobaltech.com
+          </p>
+          <p className="flex items-center justify-center gap-2 text-sm text-gray-500">
+            <FiMapPin className="text-green-400 w-5 h-5" /> Karnataka: Bhavan Complex, Attibelle, Bengaluru • TN: Sunnambu Zeebee, Hosur
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <form className="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4 transition-transform duration-300 hover:scale-105">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-4 rounded-lg border border-gray-700 bg-gray-900 text-white
+                       focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-4 rounded-lg border border-gray-700 bg-gray-900 text-white
+                       focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-4 rounded-lg border border-gray-700 bg-gray-900 text-white
+                       focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+          ></textarea>
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-green-400 to-teal-300 text-gray-900 font-semibold px-8 py-3 rounded-lg
+                       hover:from-green-300 hover:to-green-200 transition transform hover:scale-105 shadow-lg"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+export default Contact;
