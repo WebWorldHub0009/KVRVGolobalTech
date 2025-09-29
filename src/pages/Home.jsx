@@ -6,11 +6,9 @@ import Clients from "../components/home/Clients";
 import Testimonials from "../components/common/Testimonials";
 import CTA from "../components/home/CTA";
 import Contact from "../components/home/Contact";
-import Layout from "../components/layouts/Layout";
-
 export default function Home() {
     return (
-        <Layout>
+        <>
             <Hero />
             <About />
             <Services />
@@ -19,6 +17,6 @@ export default function Home() {
             <Testimonials />
             <CTA />
             <Contact />
-        </Layout>
+        </>
     );
 }

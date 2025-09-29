@@ -31,7 +31,7 @@ const Navbar = ({ logo }) => {
                  drop-shadow-lg transition-transform duration-300 hover:scale-110 hover:from-green-300 hover:to-green-200">
                         KVRV
                     </span>
- 
+
                 </div>
 
                 {/* Desktop Menu */}
@@ -53,16 +53,43 @@ const Navbar = ({ logo }) => {
                                 ▼
                             </span>
                         </button>
-                        <div className="absolute z-50 flex-col bg-white text-black mt-2 p-2 rounded shadow min-w-[180px]
-                opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
-                transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#surveillance">Surveillance</Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#automation">Home Automation</Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#renewable">Renewable Energy</Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#watertech">Water Tech</Link>
-                        </div>
+                        <div className="absolute z-50 flex-col bg-white text-black mt-2 p-2 rounded shadow min-w-[220px]
+      opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
+      transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
 
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#surveillance">
+                                Surveillance & Smart Gadgets
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#entrance">
+                                Entrance Automation
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#automation">
+                                Home Automation
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#renewable">
+                                Renewable Energy
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#watertech">
+                                Water Technology
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#hotwater">
+                                Hot Water Tech
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#pumps">
+                                Pumps & Controllers
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#ac">
+                                Air Conditioning & Elevators
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#gas">
+                                Gas Technology
+                            </Link>
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#glass">
+                                Glass Technology
+                            </Link>
+                        </div>
                     </div>
+
 
                     <Link className="hover:text-green-400 relative group transition-colors" to="/projects">
                         Projects
@@ -96,6 +123,7 @@ const Navbar = ({ logo }) => {
                     className="block px-4 py-3 hover:bg-gray-700 transition-colors"
                 >About Us</Link>
 
+                
                 {/* Mobile Solutions Dropdown */}
                 <div className="px-4 py-3">
                     <button
@@ -103,33 +131,91 @@ const Navbar = ({ logo }) => {
                         className="flex justify-between w-full font-semibold text-gray-300 hover:text-green-400 transition-colors"
                     >
                         <span>Solutions</span>
-                        <span className={`inline-block transition-transform duration-300 ${isMobileDropdownOpen ? "rotate-180" : "rotate-0"}`}>
+                        <span
+                            className={`inline-block transition-transform duration-300 ${isMobileDropdownOpen ? "rotate-180" : "rotate-0"
+                                }`}
+                        >
                             ▼
                         </span>
                     </button>
-                    <div className={`mt-2 flex flex-col gap-1 overflow-hidden transition-max-height duration-300 ${isMobileDropdownOpen ? "max-h-96" : "max-h-0"}`}>
+
+                    <div
+                        className={`mt-2 flex flex-col gap-1 overflow-hidden transition-max-height duration-300 ${isMobileDropdownOpen ? "max-h-96" : "max-h-0"
+                            }`}
+                    >
                         <Link
                             to="/solutions#surveillance"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
-                        >Surveillance</Link>
+                        >
+                            Surveillance & Smart Gadgets
+                        </Link>
+                        <Link
+                            to="/solutions#entrance"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Entrance Automation
+                        </Link>
                         <Link
                             to="/solutions#automation"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
-                        >Home Automation</Link>
+                        >
+                            Home Automation
+                        </Link>
                         <Link
                             to="/solutions#renewable"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
-                        >Renewable Energy</Link>
+                        >
+                            Renewable Energy
+                        </Link>
                         <Link
                             to="/solutions#watertech"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
-                        >Water Tech</Link>
+                        >
+                            Water Technology
+                        </Link>
+                        <Link
+                            to="/solutions#hotwater"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Hot Water Tech
+                        </Link>
+                        <Link
+                            to="/solutions#pumps"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Pumps & Controllers
+                        </Link>
+                        <Link
+                            to="/solutions#ac"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Air Conditioning & Elevators
+                        </Link>
+                        <Link
+                            to="/solutions#gas"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Gas Technology
+                        </Link>
+                        <Link
+                            to="/solutions#glass"
+                            onClick={toggleMobileMenu}
+                            className="block px-2 py-1 hover:bg-gray-700 rounded"
+                        >
+                            Glass Technology
+                        </Link>
                     </div>
                 </div>
+
 
                 <Link
                     to="/projects"
