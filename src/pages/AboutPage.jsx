@@ -2,6 +2,8 @@ import React from "react";
 import hero from "../assets/AboutPageImg/hero.png";
 import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
+import renewable from "../assets/hero3.jpg"
+import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg"
 import home from "../assets/home_automation.jpg";
 
 const solutions = [
@@ -23,12 +25,12 @@ const solutions = [
     {
         title: "Renewable Energy",
         desc: "Solar rooftops, pumps, street lights, fancy solar lights, UPS, and inverters for sustainable living.",
-        img: "/images/solutions/renewable.jpg",
+        img: renewable,
     },
     {
         title: "Water Technology",
         desc: "RO purifiers, softeners, filters, STP/WWTP/DM plants, and rainwater harvesting solutions.",
-        img: "/images/solutions/water.jpg",
+        img: WaterTechnology,
     },
     {
         title: "Hot Water Tech",
