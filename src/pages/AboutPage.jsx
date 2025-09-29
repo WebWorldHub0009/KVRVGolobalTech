@@ -1,5 +1,8 @@
 import React from "react";
-import surveillance from "../assets/hero1.jpg"
+import hero from "../assets/AboutPageImg/hero.png";
+import surveillance from "../assets/AboutPageImg/surveillance.jpg";
+import entrance from "../assets/AboutPageImg/entrance1.jpg";
+import home from "../assets/home_automation.jpg";
 
 const solutions = [
     {
@@ -10,12 +13,12 @@ const solutions = [
     {
         title: "Entrance Automation",
         desc: "Sliding & swing gates, rolling shutters, boom barriers, and high-speed doors for secure access.",
-        img: "/images/solutions/entrance.jpg",
+        img: entrance,
     },
     {
         title: "Home Automation",
         desc: "Smart control of lights, curtains, blinds, and appliances with wired, Wi-Fi, and Zigbee systems.",
-        img: "/images/solutions/home-automation.jpg",
+        img: home,
     },
     {
         title: "Renewable Energy",
@@ -58,22 +61,31 @@ function About() {
     return (
         <section id="about" className="bg-gray-50">
             {/* Hero Section */}
-            <div className="py-24 px-4 text-center">
-                <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 mb-6">
-                    About Us
-                </h1>
-                <p className="max-w-3xl mx-auto text-gray-600 text-lg md:text-xl mb-10">
-                    We are a technology-driven company transforming spaces into smarter,
-                    safer, and more sustainable environments. Our solutions span home
-                    automation, renewable energy, water tech, and modern infrastructure.
-                </p>
-                <a
-                    href="#contact"
-                    className="inline-block bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition"
-                >
-                    Get in Touch
-                </a>
+            <div className="max-w-6xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 mb-6">
+                        About Us
+                    </h1>
+                    <p className="text-gray-600 text-lg md:text-xl mb-6">
+                        We are a technology-driven company transforming spaces into smarter, safer, and more sustainable environments. Our solutions span home automation, renewable energy, water tech, and modern infrastructure.
+                    </p>
+                    <a
+                        href="#contact"
+                        className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transform transition"
+                    >
+                        Get in Touch
+                    </a>
+                </div>
+                <div data-aos="fade-left">
+                    <img
+                        src={hero}
+                        alt="About Us"
+                        className="w-full rounded-3xl shadow-lg"
+                    />
+                </div>
             </div>
+
+
 
             {/* Mission & Vision */}
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 py-20">
