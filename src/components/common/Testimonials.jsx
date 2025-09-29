@@ -1,12 +1,9 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { testimonials } from '../../data/data';
 
 function Testimonials() {
-    const testimonials = [
-        { name: "Client One", feedback: "Amazing work! Highly recommend." },
-        { name: "Client Two", feedback: "Professional and reliable team." },
-        { name: "Client Three", feedback: "Our go-to tech partner!" },
-    ];
+    
 
     return (
         <section id="testimonials" className="py-20 bg-gray-50 text-center px-4">

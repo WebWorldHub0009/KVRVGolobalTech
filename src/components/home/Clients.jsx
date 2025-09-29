@@ -1,11 +1,6 @@
 import React from "react";
+import { clients } from "../../data/data";
 
-const clients = [
-    "/clients/client1.png",
-    "/clients/client2.png",
-    "/clients/client3.png",
-    "/clients/client4.png",
-];
 
 export default function Clients() {
     return (

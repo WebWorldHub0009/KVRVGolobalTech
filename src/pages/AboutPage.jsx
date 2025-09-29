@@ -1,63 +1,8 @@
 import React from "react";
 import hero from "../assets/AboutPageImg/hero.png";
-import surveillance from "../assets/AboutPageImg/surveillance.jpg";
-import entrance from "../assets/AboutPageImg/entrance1.jpg";
-import renewable from "../assets/hero3.jpg"
-import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg"
-import home from "../assets/home_automation.jpg";
+import { solutions } from "../data/data";
 
-const solutions = [
-    {
-        title: "Surveillance & Smart Gadgets",
-        desc: "CCTV, VDP, Smart locks, Sensors, and Alarm systems to ensure safety and convenience.",
-        img: surveillance,
-    },
-    {
-        title: "Entrance Automation",
-        desc: "Sliding & swing gates, rolling shutters, boom barriers, and high-speed doors for secure access.",
-        img: entrance,
-    },
-    {
-        title: "Home Automation",
-        desc: "Smart control of lights, curtains, blinds, and appliances with wired, Wi-Fi, and Zigbee systems.",
-        img: home,
-    },
-    {
-        title: "Renewable Energy",
-        desc: "Solar rooftops, pumps, street lights, fancy solar lights, UPS, and inverters for sustainable living.",
-        img: renewable,
-    },
-    {
-        title: "Water Technology",
-        desc: "RO purifiers, softeners, filters, STP/WWTP/DM plants, and rainwater harvesting solutions.",
-        img: WaterTechnology,
-    },
-    {
-        title: "Hot Water Tech",
-        desc: "Heat pumps, geysers, and solar water heaters for efficient hot water solutions.",
-        img: "/images/solutions/hotwater.jpg",
-    },
-    {
-        title: "Pumps & Controllers",
-        desc: "Reliable water pumps, pressure boosters, and intelligent level controllers.",
-        img: "/images/solutions/pumps.jpg",
-    },
-    {
-        title: "Air Conditioning & Elevators",
-        desc: "Advanced cooling solutions and vertical mobility systems for modern spaces.",
-        img: "/images/solutions/ac-elevator.jpg",
-    },
-    {
-        title: "Gas Technology",
-        desc: "Safe LPG pipelines and durable copper lines for AC systems.",
-        img: "/images/solutions/gas.jpg",
-    },
-    {
-        title: "Glass Technology",
-        desc: "Glass partitions, railings, skylights, and shower cabins for elegant interiors.",
-        img: "/images/solutions/glass.jpg",
-    },
-];
+
 
 function About() {
     return (

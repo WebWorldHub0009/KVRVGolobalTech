@@ -1,12 +1,5 @@
 import React from "react";
-import p1 from "../../assets/home_automation.jpg";
-import p2 from "../../assets/solar.jpg";
-import p3 from "../../assets/water_purification.webp"
-const projects = [
-    { title: "Smart Home Automation", image: p1 },
-    { title: "Solar Energy Setup", image: p2 },
-    { title: "Water Purification System", image: p3 },
-];
+import { projects } from "../../data/data";
 
 export default function Projects() {
     return (
