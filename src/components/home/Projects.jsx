@@ -1,9 +1,11 @@
 import React from "react";
-
+import p1 from "../../assets/home_automation.jpg";
+import p2 from "../../assets/solar.jpg";
+import p3 from "../../assets/water_purification.webp"
 const projects = [
-    { title: "Smart Home Automation", image: "/projects/home-automation.jpg" },
-    { title: "Solar Energy Setup", image: "/projects/solar-energy.jpg" },
-    { title: "Water Purification System", image: "/projects/water-tech.jpg" },
+    { title: "Smart Home Automation", image: p1 },
+    { title: "Solar Energy Setup", image: p2 },
+    { title: "Water Purification System", image: p3 },
 ];
 
 export default function Projects() {
@@ -19,7 +21,7 @@ export default function Projects() {
                 {projects.map((p, idx) => (
                     <div key={idx} className="relative rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                         <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
-                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-50 transition-opacity">
                             <h3 className="text-white text-xl font-bold">{p.title}</h3>
                         </div>
                     </div>

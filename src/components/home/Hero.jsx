@@ -2,6 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";  // ✅ yahan se import karna hai
 import hero1 from "../../assets/hero1.jpg"
+import hero3 from "../../assets/hero3.jpg"
+import hero4 from "../../assets/hero4.jpg"
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -15,12 +17,12 @@ const slides = [
   {
     title: "Home Automation",
     subtitle: "Lights, Curtains, Voice control, Hybrid automation.",
-    img: hero1,
+    img: hero4,
   },
   {
     title: "Renewable Energy",
     subtitle: "Roof-top solar, solar pumps, street lights & inverters.",
-    img: hero1,
+    img: hero3,
   },
 ];
 
