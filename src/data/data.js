@@ -4,8 +4,12 @@ import hero3 from "../assets/hero3.jpg"
 import hero4 from "../assets/hero4.jpg"
 import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
-import renewable from "../assets/hero3.jpg"
-import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg"
+import renewable from "../assets/hero3.jpg";
+import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg";
+import Pump from "../assets/AboutPageImg/pump&Controle.jpg";
+import ac from "../assets/AboutPageImg/ac.webp";
+import gas from "../assets/AboutPageImg/gas.webp";
+import glass from "../assets/AboutPageImg/glass.webp";
 import home from "../assets/home_automation.jpg";
 import p1 from "../assets/home_automation.jpg";
 import p2 from "../assets/solar.jpg";
@@ -61,30 +65,30 @@ export const solutions = [
         desc: "RO purifiers, softeners, filters, STP/WWTP/DM plants, and rainwater harvesting solutions.",
         img: WaterTechnology,
     },
-    {
-        title: "Hot Water Tech",
-        desc: "Heat pumps, geysers, and solar water heaters for efficient hot water solutions.",
-        img: "/images/solutions/hotwater.jpg",
-    },
+    // {
+    //     title: "Hot Water Tech",
+    //     desc: "Heat pumps, geysers, and solar water heaters for efficient hot water solutions.",
+    //     img: "/images/solutions/hotwater.jpg",
+    // },
     {
         title: "Pumps & Controllers",
         desc: "Reliable water pumps, pressure boosters, and intelligent level controllers.",
-        img: "/images/solutions/pumps.jpg",
+        img: Pump,
     },
     {
         title: "Air Conditioning & Elevators",
         desc: "Advanced cooling solutions and vertical mobility systems for modern spaces.",
-        img: "/images/solutions/ac-elevator.jpg",
+        img: ac,
     },
     {
         title: "Gas Technology",
         desc: "Safe LPG pipelines and durable copper lines for AC systems.",
-        img: "/images/solutions/gas.jpg",
+        img: gas,
     },
     {
         title: "Glass Technology",
         desc: "Glass partitions, railings, skylights, and shower cabins for elegant interiors.",
-        img: "/images/solutions/glass.jpg",
+        img: glass,
     },
 ];
 

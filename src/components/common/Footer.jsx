@@ -33,14 +33,59 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4 text-green-400">Contact</h3>
           <ul className="space-y-2 text-gray-300">
-            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>CRM: 88830 10400</span></li>
-            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>Sales: 72004 49985</span></li>
-            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaPhoneAlt /> <span>Office: 95143 06044</span></li>
-            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaEnvelope /> <span>Karnataka: friendsinfrabuildtech.blr@gmail.com</span></li>
-            <li className="flex items-center gap-2 hover:text-green-400 transition-colors"><FaEnvelope /> <span>Tamil Nadu: Kvrvglobaltech.hsr@gmail.com</span></li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors">
+              <FaPhoneAlt />
+              <a href="tel:8883010400" className="hover:underline">CRM: 88830 10400</a>
+              <a
+                href="https://wa.me/918883010400"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-green-500 hover:underline"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors">
+              <FaPhoneAlt />
+              <a href="tel:7200449985" className="hover:underline">Sales: 72004 49985</a>
+              <a
+                href="https://wa.me/917200449985"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-green-500 hover:underline"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors">
+              <FaPhoneAlt />
+              <a href="tel:9514306044" className="hover:underline">Office: 95143 06044</a>
+              <a
+                href="https://wa.me/919514306044"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-green-500 hover:underline"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors">
+              <FaEnvelope />
+              <a href="mailto:friendsinfrabuildtech.blr@gmail.com" className="hover:underline">
+                Karnataka: friendsinfrabuildtech.blr@gmail.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2 hover:text-green-400 transition-colors">
+              <FaEnvelope />
+              <a href="mailto:Kvrvglobaltech.hsr@gmail.com" className="hover:underline">
+                Tamil Nadu: Kvrvglobaltech.hsr@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
 
+
+        {/* Office Addresses */}
         {/* Office Addresses */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-green-400">Our Offices</h3>
@@ -49,18 +94,33 @@ const Footer = () => {
               <FaMapMarkerAlt />
               <div>
                 <strong>Corporate - Karnataka:</strong><br />
-                KVRV Global Tech, No:1&2, First Floor, Bhavan Complex, NH 47, Attibelle, Bangalore - 562107
+                <a
+                  href="https://www.google.com/maps?q=KVRV+Global+Tech,+No:1&2,+First+Floor,+Bhavan+Complex,+NH+47,+Attibelle,+Bangalore+-+562107"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  KVRV Global Tech, No:1&2, First Floor, Bhavan Complex, NH 47, Attibelle, Bangalore - 562107
+                </a>
               </div>
             </li>
             <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
               <FaMapMarkerAlt />
               <div>
                 <strong>Branch - Tamil Nadu:</strong><br />
-                KVRV GLOBAL TECH, Shop No: 03, Ground Floor, Sunnambu Jeebi, Hosur, Krishnagiri - 635109
+                <a
+                  href="https://www.google.com/maps?q=KVRV+GLOBAL+TECH,+Shop+No:+03,+Ground+Floor,+Sunnambu+Jeebi,+Hosur,+Krishnagiri+-+635109"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  KVRV GLOBAL TECH, Shop No: 03, Ground Floor, Sunnambu Jeebi, Hosur, Krishnagiri - 635109
+                </a>
               </div>
             </li>
           </ul>
         </div>
+
       </div>
 
       {/* Footer Bottom */}

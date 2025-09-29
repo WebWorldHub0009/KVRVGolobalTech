@@ -14,16 +14,49 @@ function Contact() {
 
         {/* Contact Info */}
         <div className="mb-8 space-y-2 text-gray-300">
+          {/* Phone */}
           <p className="flex items-center justify-center gap-2">
-            <FiPhone className="text-green-400 w-5 h-5" /> +91 72004 49985 | +91 88830 10400
+            <FiPhone className="text-green-400 w-5 h-5" />
+            <a href="tel:+917200449985" className="hover:underline">
+              +91 72004 49985
+            </a>
+            |
+            <a href="tel:+918883010400" className="hover:underline">
+              +91 88830 10400
+            </a>
           </p>
+
+          {/* Email */}
           <p className="flex items-center justify-center gap-2">
-            <FiMail className="text-green-400 w-5 h-5" /> info@kvrvglobaltech.com
+            <FiMail className="text-green-400 w-5 h-5" />
+            <a href="mailto:info@kvrvglobaltech.com" className="hover:underline">
+              info@kvrvglobaltech.com
+            </a>
           </p>
+
+          {/* Address */}
           <p className="flex items-center justify-center gap-2 text-sm text-gray-500">
-            <FiMapPin className="text-green-400 w-5 h-5" /> Karnataka: Bhavan Complex, Attibelle, Bengaluru • TN: Sunnambu Zeebee, Hosur
+            <FiMapPin className="text-green-400 w-5 h-5" />
+            <a
+              href="https://www.google.com/maps?q=Bhavan+Complex,+Attibelle,+Bengaluru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Karnataka: Bhavan Complex, Attibelle, Bengaluru
+            </a>
+            •
+            <a
+              href="https://www.google.com/maps?q=Sunnambu+Zeebee,+Hosur"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              TN: Sunnambu Zeebee, Hosur
+            </a>
           </p>
         </div>
+
 
         {/* Contact Form */}
         <form className="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4 transition-transform duration-300 hover:scale-105">
