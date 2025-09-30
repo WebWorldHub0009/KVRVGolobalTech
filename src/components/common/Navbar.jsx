@@ -57,34 +57,34 @@ const Navbar = ({ logo }) => {
       opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
       transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
 
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#surveillance">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/surveillance">
                                 Surveillance & Smart Gadgets
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#entrance">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/entrance">
                                 Entrance Automation
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#automation">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/automation">
                                 Home Automation
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#renewable">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/renewable">
                                 Renewable Energy
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#watertech">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/watertech">
                                 Water Technology
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#hotwater">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/hotwater">
                                 Hot Water Tech
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#pumps">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/pumps">
                                 Pumps & Controllers
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#ac">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/ac">
                                 Air Conditioning & Elevators
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#gas">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/gas">
                                 Gas Technology
                             </Link>
-                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/solutions#glass">
+                            <Link className="block px-4 py-2 hover:bg-gray-200 rounded" to="/glass">
                                 Glass Technology
                             </Link>
                         </div>
@@ -144,70 +144,70 @@ const Navbar = ({ logo }) => {
                             }`}
                     >
                         <Link
-                            to="/solutions#surveillance"
+                            to="/surveillance"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Surveillance & Smart Gadgets
                         </Link>
                         <Link
-                            to="/solutions#entrance"
+                            to="/entrance"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Entrance Automation
                         </Link>
                         <Link
-                            to="/solutions#automation"
+                            to="/automation"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Home Automation
                         </Link>
                         <Link
-                            to="/solutions#renewable"
+                            to="/renewable"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Renewable Energy
                         </Link>
                         <Link
-                            to="/solutions#watertech"
+                            to="/watertech"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Water Technology
                         </Link>
                         <Link
-                            to="/solutions#hotwater"
+                            to="/hotwater"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Hot Water Tech
                         </Link>
                         <Link
-                            to="/solutions#pumps"
+                            to="/pumps"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Pumps & Controllers
                         </Link>
                         <Link
-                            to="/solutions#ac"
+                            to="/ac"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Air Conditioning & Elevators
                         </Link>
                         <Link
-                            to="/solutions#gas"
+                            to="/gas"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >
                             Gas Technology
                         </Link>
                         <Link
-                            to="/solutions#glass"
+                            to="/glass"
                             onClick={toggleMobileMenu}
                             className="block px-2 py-1 hover:bg-gray-700 rounded"
                         >

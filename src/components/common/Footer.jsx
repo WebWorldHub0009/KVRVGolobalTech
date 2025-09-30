@@ -133,7 +133,7 @@ const Footer = () => {
             href="https://webworldhub.co.in/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-yellow-400 font-semibold transition-colors"
+            className="text-white hover:text-green-400 font-semibold transition-colors"
           >
             Web World Hub
           </a>

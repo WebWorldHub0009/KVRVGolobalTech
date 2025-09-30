@@ -1,7 +1,9 @@
 import React from "react";
 import hero from "../assets/AboutPageImg/hero.png";
 import { solutions } from "../data/data";
-import { Link } from "react-scroll";  // <-- here
+// import { Link } from "react-scroll";  // <-- here
+import { Link } from "react-router-dom";
+
 import { FaUsers, FaProjectDiagram, FaAward } from "react-icons/fa";
 
 
@@ -22,13 +24,12 @@ function About() {
                     </p>
 
                     <Link
-                        to="contact"
-                        smooth={true}
-                        duration={500}
+                        to="/contact"
                         className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transform transition cursor-pointer"
                     >
                         Get in Touch
                     </Link>
+
 
                 </div>
 
@@ -143,14 +144,13 @@ function About() {
                 <p className="max-w-2xl mx-auto text-gray-700 text-lg md:text-xl mb-6">
                     With a holistic approach, we integrate technology and sustainability to deliver cutting-edge solutions for residential, commercial, and industrial needs.
                 </p>
-                <a
-                    href="#contact"
+                <Link
+                    to="/contact"
                     className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transform transition"
                 >
                     Contact Us
-                </a>
+                </Link>
             </div>
-
         </section>
     );
 }
