@@ -53,7 +53,7 @@ const Navbar = ({ logo }) => {
                                 ▼
                             </span>
                         </button>
-                        <div className="absolute z-50 flex-col bg-white text-black mt-2 p-2 rounded shadow min-w-[220px]
+                        <div className="absolute z-50 flex-col bg-white text-black mt-1 p-2 rounded shadow min-w-[220px]
       opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
       transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
 
