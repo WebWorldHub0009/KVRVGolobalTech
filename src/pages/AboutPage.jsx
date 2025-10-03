@@ -3,13 +3,19 @@ import hero from "../assets/AboutPageImg/hero.png";
 import { solutions } from "../data/data";
 // import { Link } from "react-scroll";  // <-- here
 import { Link } from "react-router-dom";
-
 import { FaUsers, FaProjectDiagram, FaAward } from "react-icons/fa";
+import Hero from "../components/common/Hero";
 
 
 function About() {
     return (
         <section className="bg-gray-50">
+            {/* Genric hero */}
+            <Hero
+                title="About Us"
+                subtitle="We are pioneers in technology-driven lifestyle solutions."
+                backgroundImage="/images/services/renewable/solar.webp"
+            />
 
             {/* Hero Section */}
             <div className="max-w-6xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">

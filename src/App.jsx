@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import AboutUs from "./pages/AboutPage"
 import ContactUs from './pages/ContactPage'
 import ServicePage from './pages/ServicePage'
+import Projects from './pages/Projects'
 function App() {
   return (
     <Layout>
@@ -15,6 +16,7 @@ function App() {
         {/* Dropdown pages */}
         {/* :type dynamic route */}
         <Route path='/:type' element={<ServicePage/>}/>
+        <Route path='/projects' element={<Projects/>}/>
       </Routes>
     </Layout>
 

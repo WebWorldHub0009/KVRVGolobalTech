@@ -13,11 +13,11 @@ export default function Hero() {
         navigation
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop
-        className="h-[80vh]"
+        className="h-screen"
       >
         {slides.map((s, i) => (
           <SwiperSlide key={i}>
-            <div className="relative h-[80vh]">
+            <div className="relative h-screen">
               <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
                 <div className="text-center text-white max-w-3xl">

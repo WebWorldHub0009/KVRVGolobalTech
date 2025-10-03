@@ -61,7 +61,10 @@ function About() {
 
       {/* Services / Domains Grid */}
       <h3 className="text-2xl font-bold mb-8 text-gray-800">Our Expertise</h3>
-      <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left relative w-full py-16 px-16 bg-cover bg-center"
+        // className="relative w-full py-16 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/services/services-bg.png')" }}
+      >
         {[
           { icon: <MdOutlineSecurity />, label: "Surveillance & Smart Gadgets" },
           { icon: <GiAutoRepair />, label: "Entrance Automation" },

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Translator from "./Translator";
 
 const Footer = () => {
   return (
@@ -9,13 +10,20 @@ const Footer = () => {
         {/* Logo & Brief */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold bg-clip-text text-transparent 
-                         bg-gradient-to-r from-green-400 via-teal-300 to-green-400">
+                 bg-gradient-to-r from-green-400 via-teal-300 to-green-400">
             KVRV Global Tech
           </h2>
           <p className="text-gray-300 text-sm">
             Smart Living, Secure Future — Automation, renewable energy, and lifestyle solutions under one roof.
           </p>
+
+          <div className="flex">
+            <div className="mr-auto">
+              <Translator />
+            </div>
+          </div>
         </div>
+
 
         {/* Quick Links */}
         <div>
@@ -27,6 +35,7 @@ const Footer = () => {
             <li><a href="/projects" className="hover:text-green-400 transition-colors">Projects</a></li>
             <li><a href="/contact" className="hover:text-green-400 transition-colors">Contact Us</a></li>
           </ul>
+
         </div>
 
         {/* Contact Info */}
@@ -86,7 +95,6 @@ const Footer = () => {
 
 
         {/* Office Addresses */}
-        {/* Office Addresses */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-green-400">Our Offices</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
@@ -104,6 +112,7 @@ const Footer = () => {
                 </a>
               </div>
             </li>
+
             <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
               <FaMapMarkerAlt />
               <div>
@@ -117,6 +126,19 @@ const Footer = () => {
                   KVRV GLOBAL TECH, Shop No: 03, Ground Floor, Sunnambu Jeebi, Hosur, Krishnagiri - 635109
                 </a>
               </div>
+            </li>
+
+            {/* ✅ Web Link ko bhi li ke andar rakha */}
+            <li className="flex items-start gap-2">
+              <FaMapMarkerAlt className="mt-1 text-purple-400" />
+              <a
+                href="https://md-in-82.webhostbox.net:2096/cpsess3927650103/3rdparty/roundcube/?_task=mail&_mbox=INBOX"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-105 transition transform text-white px-4 py-2 rounded-lg shadow-md font-semibold"
+              >
+                🌐 Web Link
+              </a>
             </li>
           </ul>
         </div>

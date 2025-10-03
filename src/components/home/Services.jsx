@@ -34,13 +34,6 @@ export default function Services() {
                         image={solarImg}
                         link="/renewable"
                     />
-                </div>
-            </section>
-
-            {/* Other Solutions Section */}
-            <section id="others" className="py-20 px-6 bg-gradient-to-b from-gray-100 to-gray-50">
-                <SectionTitle title="Other Solutions" />
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ServiceCard
                         title="Water Tech"
                         desc="RO Purifiers, Water Softeners, STP/WWTP, Rainwater Harvesting."
