@@ -13,9 +13,10 @@ function About() {
             {/* Genric hero */}
             <Hero
                 title="About Us"
-                subtitle="We are pioneers in technology-driven lifestyle solutions."
+                subtitle="Committed to creating smarter, safer, and more connected lifestyles."
                 backgroundImage="/images/services/renewable/solar.webp"
             />
+
 
             {/* Hero Section */}
             <div className="max-w-6xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
