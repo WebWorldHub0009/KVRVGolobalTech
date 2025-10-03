@@ -2,6 +2,7 @@ import React from "react";
 import { FaLightbulb, FaShieldAlt, FaLeaf, FaSolarPanel, FaCogs, FaTint, FaHotTub, FaFan, FaGasPump, FaGlassWhiskey } from "react-icons/fa";
 import { MdSensors, MdOutlineSecurity } from "react-icons/md";
 import { GiWaterDrop, GiHeatHaze, GiAutoRepair } from "react-icons/gi";
+import { solutions } from "../../data/data"
 
 function About() {
   return (
@@ -60,29 +61,32 @@ function About() {
       </div>
 
       {/* Services / Domains Grid */}
-      <h3 className="text-2xl font-bold mb-8 text-gray-800">Our Expertise</h3>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left relative w-full py-16 px-16 bg-cover bg-center"
-        // className="relative w-full py-16 bg-cover bg-center"
+      <h3 className="text-3xl font-bold mb-8 text-gray-800">Our Expertise</h3>
+      <div
+        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left relative w-full py-16 px-8 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/services/services-bg.png')" }}
       >
-        {[
-          { icon: <MdOutlineSecurity />, label: "Surveillance & Smart Gadgets" },
-          { icon: <GiAutoRepair />, label: "Entrance Automation" },
-          { icon: <MdSensors />, label: "Home Automation" },
-          { icon: <FaSolarPanel />, label: "Renewable Energy" },
-          { icon: <GiWaterDrop />, label: "Water Technology" },
-          { icon: <GiHeatHaze />, label: "Hot Water Tech" },
-          { icon: <FaCogs />, label: "Pumps & Controllers" },
-          { icon: <FaFan />, label: "Air Conditioning & Elevators" },
-          { icon: <FaGasPump />, label: "Gas Technology" },
-          { icon: <FaGlassWhiskey />, label: "Glass Technology" },
-        ].map((item, idx) => (
+        {solutions.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white p-5 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center gap-3"
+            className="bg-white p-5 rounded-lg shadow hover:shadow-lg transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex flex-col items-start"
           >
-            <span className="text-green-500 text-2xl">{item.icon}</span>
-            <span className="text-gray-700 font-medium">{item.label}</span>
+            {/* Image */}
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-32 object-cover rounded-md mb-4"
+            />
+
+            {/* Title */}
+            <h3 className="text-green-600 text-lg font-bold mb-2">
+              {item.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>

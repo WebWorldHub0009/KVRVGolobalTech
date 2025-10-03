@@ -40,57 +40,48 @@ export const testimonials = [
 
 
 export const solutions = [
-    {
-        title: "Surveillance & Smart Gadgets",
-        desc: "CCTV, VDP, Smart locks, Sensors, and Alarm systems to ensure safety and convenience.",
-        img: surveillance,
-    },
-    {
-        title: "Entrance Automation",
-        desc: "Sliding & swing gates, rolling shutters, boom barriers, and high-speed doors for secure access.",
-        img: entrance,
-    },
-    {
-        title: "Home Automation",
-        desc: "Smart control of lights, curtains, blinds, and appliances with wired, Wi-Fi, and Zigbee systems.",
-        img: home,
-    },
-    {
-        title: "Renewable Energy",
-        desc: "Solar rooftops, pumps, street lights, fancy solar lights, UPS, and inverters for sustainable living.",
-        img: renewable,
-    },
-    {
-        title: "Water Technology",
-        desc: "RO purifiers, softeners, filters, STP/WWTP/DM plants, and rainwater harvesting solutions.",
-        img: WaterTechnology,
-    },
-    // {
-    //     title: "Hot Water Tech",
-    //     desc: "Heat pumps, geysers, and solar water heaters for efficient hot water solutions.",
-    //     img: "/images/solutions/hotwater.jpg",
-    // },
-    {
-        title: "Pumps & Controllers",
-        desc: "Reliable water pumps, pressure boosters, and intelligent level controllers.",
-        img: Pump,
-    },
-    {
-        title: "Air Conditioning & Elevators",
-        desc: "Advanced cooling solutions and vertical mobility systems for modern spaces.",
-        img: ac,
-    },
-    {
-        title: "Gas Technology",
-        desc: "Safe LPG pipelines and durable copper lines for AC systems.",
-        img: gas,
-    },
-    {
-        title: "Glass Technology",
-        desc: "Glass partitions, railings, skylights, and shower cabins for elegant interiors.",
-        img: glass,
-    },
+  {
+    title: "Surveillance & Smart Gadgets",
+    desc: "CCTV, video door phones, smart locks, sensors, and alarm systems for complete safety.",
+    img: surveillance,
+  },
+  {
+    title: "Entrance Automation",
+    desc: "Automatic sliding & swing gates, shutters, boom barriers, and high-speed doors.",
+    img: entrance,
+  },
+  {
+    title: "Home Automation",
+    desc: "Smart lighting, curtain control, voice-enabled systems, and hybrid automation.",
+    img: home,
+  },
+  {
+    title: "Renewable Energy",
+    desc: "Solar rooftops, inverters, solar pumps, and eco-friendly street lighting solutions.",
+    img: renewable,
+  },
+  {
+    title: "Water Technology",
+    desc: "RO purifiers, softeners, filters, wastewater treatment, and rainwater harvesting.",
+    img: WaterTechnology,
+  },
+  {
+    title: "HVAC & Cooling Solutions",
+    desc: "Efficient air conditioning, chillers, and elevators for modern living and workplaces.",
+    img: ac,
+  },
+  {
+    title: "Gas Technology",
+    desc: "Safe LPG pipeline installation and durable copper line solutions for AC systems.",
+    img: gas,
+  },
+  {
+    title: "Glass & Interior Technology",
+    desc: "Glass partitions, railings, skylights, and shower cabins for elegant interiors.",
+    img: glass,
+  },
 ];
+
 
 
 export const projects = [

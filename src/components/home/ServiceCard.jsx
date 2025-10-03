@@ -15,7 +15,7 @@ export default function ServiceCard({ title, desc, image, link }) {
                 <img
                     src={image}
                     alt={title}
-                    className="w-36 h-36 mx-auto rounded-xl shadow-lg object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-36 object-cover rounded-xl shadow-lg object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
             </div>
 

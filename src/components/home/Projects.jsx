@@ -3,7 +3,11 @@ import { projects } from "../../data/data";
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20 px-6 bg-gray-50">
+        <section 
+        id="projects" 
+        className="py-20 px-6 bg-gray-50 bg-center bg-cover h-screen"
+        style={{backgroundImage: "url('/images/services/renewable/solar.webp')"}}
+        >
             <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12
                            bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-300 to-green-400
                            animate-gradient-x">

@@ -49,7 +49,7 @@ const Navbar = ({ logo }) => {
                     <div className="relative group">
                         <button className="flex items-center gap-1 hover:text-green-400 transition-colors">
                             Solutions
-                            <span className="inline-block transition-transform duration-300 group-hover:rotate-180">
+                            <span className="inline-block text-[10px] transition-transform duration-300 group-hover:rotate-180">
                                 ▼
                             </span>
                         </button>
