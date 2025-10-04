@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Translator from "./Translator";
+import VisitorCounter from "./VisitorCounter";
 
 const Footer = () => {
   return (
@@ -24,18 +25,23 @@ const Footer = () => {
           </div>
         </div>
 
-
         {/* Quick Links */}
-        <div>
-          <h3 className="font-semibold text-lg mb-4 text-green-400">Quick Links</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li><a href="/" className="hover:text-green-400 transition-colors">Home</a></li>
-            <li><a href="/about" className="hover:text-green-400 transition-colors">About Us</a></li>
-            <li><a href="/solutions" className="hover:text-green-400 transition-colors">Solutions</a></li>
-            <li><a href="/projects" className="hover:text-green-400 transition-colors">Projects</a></li>
-            <li><a href="/contact" className="hover:text-green-400 transition-colors">Contact Us</a></li>
-          </ul>
+        <div className="flex flex-col justify-between">
+          <div>
+            <h3 className="font-semibold text-lg mb-4 text-green-400">Quick Links</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="/" className="hover:text-green-400 transition-colors">Home</a></li>
+              <li><a href="/about" className="hover:text-green-400 transition-colors">About Us</a></li>
+              <li><a href="/solutions" className="hover:text-green-400 transition-colors">Solutions</a></li>
+              <li><a href="/projects" className="hover:text-green-400 transition-colors">Projects</a></li>
+              <li><a href="/contact" className="hover:text-green-400 transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
 
+          {/* Visitor Counter */}
+          <div className="mt-6 border-gray-700 pt-3">
+            <VisitorCounter />
+          </div>
         </div>
 
         {/* Contact Info */}
@@ -93,7 +99,6 @@ const Footer = () => {
           </ul>
         </div>
 
-
         {/* Office Addresses */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-green-400">Our Offices</h3>
@@ -128,7 +133,6 @@ const Footer = () => {
               </div>
             </li>
 
-            {/* ✅ Web Link ko bhi li ke andar rakha */}
             <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
               <FaMapMarkerAlt className="mt-1 text-white-400" />
               <a
@@ -143,13 +147,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-gray-700 text-center py-6 mt-10 text-gray-400 text-sm justify-center items-center gap-2 md:gap-4 pt-6 text-center flex flex-col gap-1">
+      <div className="border-t border-gray-700 text-center py-6 mt-10 text-gray-400 text-sm flex flex-col items-center gap-1">
         <span>&copy; {new Date().getFullYear()} KVRV Global Tech. All Rights Reserved.</span>
-        <a href="https://www.behance.net/" className="hover:text-green-400 transition-colors">Design Inspiration</a>
         <span>
           Developed & Designed by{" "}
           <a
