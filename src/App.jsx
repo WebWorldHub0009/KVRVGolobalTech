@@ -19,7 +19,6 @@ function App() {
         <Route path='/:type' element={<ServicePage />} />
         <Route path='/projects' element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
-
       </Routes>
     </Layout>
 
