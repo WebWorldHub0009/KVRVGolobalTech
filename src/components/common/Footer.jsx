@@ -129,13 +129,14 @@ const Footer = () => {
             </li>
 
             {/* ✅ Web Link ko bhi li ke andar rakha */}
-            <li className="flex items-start gap-2">
-              <FaMapMarkerAlt className="mt-1 text-purple-400" />
+            <li className="flex items-start gap-2 hover:text-green-400 transition-colors">
+              <FaMapMarkerAlt className="mt-1 text-white-400" />
               <a
                 href="https://md-in-82.webhostbox.net:2096/cpsess3927650103/3rdparty/roundcube/?_task=mail&_mbox=INBOX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-105 transition transform text-white px-4 py-2 rounded-lg shadow-md font-semibold"
+                className="bg-gradient-to-r from-green-400 to-teal-300 text-gray-900 font-semibold px-8 py-3 rounded-lg
+                   hover:from-green-300 hover:to-green-200 transition transform hover:scale-105 shadow-lg"
               >
                 🌐 Web Link
               </a>
