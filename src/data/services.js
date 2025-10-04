@@ -103,8 +103,8 @@ const services = [
         description:
             "Efficient water heating solutions including geysers, solar water heaters, and heat pumps.",
         images: [
-            "/images/services/hotwater/geyser.webp",
-            "/images/services/hotwater/watertech.webp",
+            "/images/services/watertech/watertech1.webp",
+            "/images/services/watertech/watertech.webp",
         ],
         keyFeatures: ["Solar water heaters", "Geysers and heat pumps", "Energy efficient systems"],
         applications: ["Homes", "Hotels", "Factories"],
