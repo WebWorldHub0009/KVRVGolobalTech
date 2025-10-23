@@ -69,7 +69,7 @@ export const slides = [
     img: home, // apna image daalna
   },
   {
-    title: "Renewable Energy",
+    title: "Renewable Energy Source",
     subtitle:
       "Roof-Top Solar System, Solar Pumps, UPS & Inverters, Solar Street Lights, Solar Fancy Lights",
     img: renewable, // apna image daalna
