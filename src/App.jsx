@@ -7,12 +7,14 @@ import ContactUs from './pages/ContactPage'
 import ServicePage from './pages/ServicePage'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
+import VideoShowcase from './components/common/VideoShowcase'
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/video' element={<VideoShowcase/>} />
         <Route path='/contact' element={<ContactUs />} />
         {/* Dropdown pages */}
         {/* :type dynamic route */}

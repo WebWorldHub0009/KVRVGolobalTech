@@ -89,11 +89,11 @@ const Navbar = ({ logo }) => {
                             </Link>
                         </div>
                     </div>
-                    <Link className="hover:text-green-400 relative group transition-colors" to="/about">
+                    <Link className="hover:text-green-400 relative group transition-colors" to="/gallery">
                         Gallery
                         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
                     </Link>
-                    <Link className="hover:text-green-400 relative group transition-colors" to="/about">
+                    <Link className="hover:text-green-400 relative group transition-colors" to="/video">
                         Videos
                         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
                     </Link>
