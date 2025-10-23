@@ -18,7 +18,7 @@ function About() {
             />
 
 
-            {/* Hero Section */}
+            {/* About Section */}
             <div className="max-w-6xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
                 <div className="flex flex-col justify-center space-y-6">
                     <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">

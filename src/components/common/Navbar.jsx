@@ -17,7 +17,7 @@ const Navbar = ({ logo }) => {
                     {logo && (
                         <div className="bg-gray-900 shadow-md flex items-center justify-center rounded-full overflow-hidden
                 transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]
-                h-12 w-12 z-40">
+                h-15 w-15 z-40">
                             <img
                                 src={logo}
                                 alt="KVRV Logo"
@@ -26,11 +26,11 @@ const Navbar = ({ logo }) => {
                         </div>
 
                     )}
-                    <span className="text-3xl md:text-4xl font-extrabold tracking-wider select-none
+                    {/* <span className="text-3xl md:text-4xl font-extrabold tracking-wider select-none
                  bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-300 to-green-400
                  drop-shadow-lg transition-transform duration-300 hover:scale-110 hover:from-green-300 hover:to-green-200">
                         KVRV
-                    </span>
+                    </span> */}
 
                 </div>
 
@@ -48,7 +48,7 @@ const Navbar = ({ logo }) => {
                     {/* Solutions Dropdown */}
                     <div className="relative group">
                         <button className="flex items-center gap-1 hover:text-green-400 transition-colors">
-                            Solutions
+                            Products And Services
                             <span className="inline-block text-[10px] transition-transform duration-300 group-hover:rotate-180">
                                 ▼
                             </span>
@@ -89,7 +89,14 @@ const Navbar = ({ logo }) => {
                             </Link>
                         </div>
                     </div>
-
+                    <Link className="hover:text-green-400 relative group transition-colors" to="/about">
+                        Gallery
+                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
+                    </Link>
+                    <Link className="hover:text-green-400 relative group transition-colors" to="/about">
+                        Videos
+                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
+                    </Link>
 
                     <Link className="hover:text-green-400 relative group transition-colors" to="/projects">
                         Projects
@@ -123,7 +130,7 @@ const Navbar = ({ logo }) => {
                     className="block px-4 py-3 hover:bg-gray-700 transition-colors"
                 >About Us</Link>
 
-                
+
                 {/* Mobile Solutions Dropdown */}
                 <div className="px-4 py-3">
                     <button
