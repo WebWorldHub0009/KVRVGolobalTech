@@ -6,7 +6,7 @@ import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
 import renewable from "../assets/hero3.jpg";
 import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg";
-// import Pump from "../assets/AboutPageImg/pump&Controle.jpg";
+import Pump from "../assets/AboutPageImg/pump&Controle.jpg";
 import ac from "../assets/AboutPageImg/ac.webp";
 import gas from "../assets/AboutPageImg/gas.webp";
 import glass from "../assets/AboutPageImg/glass.webp";
@@ -14,23 +14,68 @@ import home from "../assets/home_automation.jpg";
 import p1 from "../assets/home_automation.jpg";
 import p2 from "../assets/solar.jpg";
 import p3 from "../assets/water_purification.webp"
+import hotwater from "/images/services/hotwater/geyser.webp"
 export const slides = [
-    {
-        title: "Surveillance Systems",
-        subtitle: "CCTV, VDP, Smart Locks, Alarms — Complete security solutions.",
-        img: hero1, // apna image daalna
-    },
-    {
-        title: "Home Automation",
-        subtitle: "Lights, Curtains, Voice control, Hybrid automation.",
-        img: hero5,
-    },
-    {
-        title: "Renewable Energy",
-        subtitle: "Roof-top solar, solar pumps, street lights & inverters.",
-        img: hero6,
-    },
+  {
+    title: "Water Tech",
+    subtitle:
+      "RO Water Purifiers, Water Softeners, Sand Filters, Carbon Filters, Commercial RO Systems, STP, WWTP, DM Plants, Rain Water Harvesting (RWH)",
+    img: WaterTechnology, // apna image daalna
+  },
+  {
+    title: "Hot Water Tech",
+    subtitle:
+      "Heat Pump (Hot Water System), Geysers, Solar Water Heaters, Gujarat Boiler",
+    img: hotwater, // apna image daalna
+  },
+  {
+    title: "Pumps & Controllers",
+    subtitle:
+      "Pressure Booster Pumps, Water Pumps, Automatic Water Level Controllers, Water Level Indicators",
+    img: Pump, // apna image daalna
+  },
+  {
+    title: "Air Conditioners & Elevators (Lift)",
+    subtitle:
+      "Efficient Air Conditioning and Modern Elevator Systems for Commercial and Residential Spaces",
+    img: ac, // apna image daalna
+  },
+  {
+    title: "Gas Tech",
+    subtitle: "LPG Gas Line, A/C Copper Line",
+    img: gas, // apna image daalna
+  },
+  {
+    title: "Glass Tech",
+    subtitle:
+      "Shower Partitions, Glass Railings, Sky Light Glasses, Window Glasses, Office Partitions",
+    img: glass, // apna image daalna
+  },
+  {
+    title: "Surveillance Systems & Smart Gadgets",
+    subtitle:
+      "CCTV Cameras, Video Door Phone (VDP), Smart Digital Door Locks, Gas Leakage Detectors, Alarm & Sensors",
+    img: surveillance, // apna image daalna
+  },
+  {
+    title: "Entrance Automation",
+    subtitle:
+      "Sliding Gate Operator, Swing Gate Operator, Rolling Shutter Operator, High Speed Door Operator, Rapid Door Operator, Boom Barrier System",
+    img: entrance, // apna image daalna
+  },
+  {
+    title: "Home Automation",
+    subtitle: "Light Automation, Curtain Operators, Blind Operators",
+    img: home, // apna image daalna
+  },
+  {
+    title: "Renewable Energy",
+    subtitle:
+      "Roof-Top Solar System, Solar Pumps, UPS & Inverters, Solar Street Lights, Solar Fancy Lights",
+    img: renewable, // apna image daalna
+  },
 ];
+
 
 export const testimonials = [
     {

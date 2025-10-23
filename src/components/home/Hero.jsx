@@ -22,7 +22,13 @@ export default function Hero() {
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
                 <div className="text-center text-white max-w-3xl">
                   <h1 className="text-3xl md:text-5xl font-bold">{s.title}</h1>
-                  <p className="mt-4 text-sm md:text-lg">{s.subtitle}</p>
+                  <p className="mt-4 text-sm md:text-lg">
+                    {s.subtitle.split(',').map((item, index)=>(
+                      <span key={index} className="block">
+                        {item.trim()}
+                      </span>
+                    ))}
+                    </p>
                   <a
                     href="#services"
                     className="inline-block mt-6 px-6 py-3 bg-blue-600 rounded-md font-medium"
