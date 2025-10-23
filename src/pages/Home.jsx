@@ -7,6 +7,7 @@ import Associates from "../components/home/Associates";
 import Testimonials from "../components/common/Testimonials";
 import CTA from "../components/home/CTA";
 import Contact from "../components/home/Contact";
+import HomeOrgChart from "../components/home/HomeOrgChart";
 export default function Home() {
     return (
         <>
@@ -17,7 +18,7 @@ export default function Home() {
             {/* <Clients /> */}
             <Testimonials />
             <Associates />
-            
+            <HomeOrgChart />
             <CTA />
             <Contact />
         </>

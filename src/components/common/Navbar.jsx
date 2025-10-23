@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const Navbar = ({ logo }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ const Navbar = ({ logo }) => {
 
     return (
         <nav className="bg-gray-900 text-white fixed w-full z-50 shadow-xl">
+            <Header/>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
 
                 {/* Logo Section */}

@@ -7,7 +7,7 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <ScrollToTop />
+            <ScrollToTop />   
             <Navbar logo={logo} />
             <main className="pt-16">{children}</main>
             <Footer />

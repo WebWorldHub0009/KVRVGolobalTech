@@ -8,13 +8,15 @@ import ServicePage from './pages/ServicePage'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
 import VideoShowcase from './components/common/VideoShowcase'
+import Gallery from './pages/Gallery'
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />
-        <Route path='/video' element={<VideoShowcase/>} />
+        <Route path='/video' element={<VideoShowcase />} />
+        <Route path='/gallery' element={<Gallery />} />
         <Route path='/contact' element={<ContactUs />} />
         {/* Dropdown pages */}
         {/* :type dynamic route */}
