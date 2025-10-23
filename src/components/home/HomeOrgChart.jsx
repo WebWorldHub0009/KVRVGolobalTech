@@ -9,7 +9,7 @@ const HomeOrgChart = () => {
 
             <div className="flex flex-col items-center">
                 {/* Top Level */}
-                <div className="bg-[#FC0101] text-white font-semibold px-6 py-3 rounded-lg shadow-md relative">
+                <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md relative">
                     KVRV Group
                     {/* Vertical line down */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 top-full h-8 border-l-2 border-gray-400"></div>
