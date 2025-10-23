@@ -4,19 +4,20 @@ import { testimonials } from '../../data/data';
 
 function Testimonials() {
     return (
-        <section id="testimonials" className="py-20 bg-gray-50 text-center px-4">
+        <section id="testimonials" className="py-20 bg-gray-50 text-center px-4 sm:px-6 lg:px-12">
             {/* Gradient Animated Heading */}
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-12
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12
                            bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-teal-300 to-green-400
                            animate-gradient-x">
                 What Our Clients Say
             </h2>
 
-            <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 flex-wrap">
+            {/* Testimonials Grid */}
+            <div className="flex flex-wrap justify-center gap-6">
                 {testimonials.map((t, idx) => (
                     <div
                         key={idx}
-                        className="bg-white p-8 rounded-2xl shadow-lg w-80 flex flex-col justify-between 
+                        className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg w-full sm:w-[45%] md:w-[30%] flex flex-col justify-between 
                                    transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-green-50 hover:to-green-100"
                     >
                         {/* User Icon */}
@@ -36,7 +37,7 @@ function Testimonials() {
                 ))}
             </div>
         </section>
-    )
+    );
 }
 
 export default Testimonials;
