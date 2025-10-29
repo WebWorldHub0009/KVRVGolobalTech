@@ -9,16 +9,16 @@ import "swiper/css/navigation";
 
 export default function Hero() {
   const titleToIdMap = {
-    "Water Solutions": "watertech",
-    "Hot Water Solutions": "hotwatertech",
+    "Water Tech": "watertech",
+    "Hot Water Tech": "hotwatertech",
     "Pumps & Controllers": "pumps",
     "Air Conditioners & Elevators (Lift)": "acelevators",
-    "Gas Tech Solutions": "gastech",
-    "Glass Tech Solutions": "glasstech",
+    "Gas Tech": "gastech",
+    "Glass Tech": "glasstech",
     "Surveillance Systems & Smart Gadgets": "surveillance",
-    "Entrance Automation Systems": "entranceautomation",
+    "Entrance Automation": "entranceautomation",
     "Home Automation": "homeautomation",
-    "Renewable Energy Solutions": "renewableenergy",
+    "Renewable Energy Source": "renewableenergy",
   };
 
   return (
@@ -33,12 +33,7 @@ export default function Hero() {
         {slides.map((s, i) => (
           <SwiperSlide key={i}>
             <div className="relative h-[100vh]">
-              <img
-                src={s.img}
-                alt={s.title}
-                className="w-full h-full object-cover"
-              />
-              {/* Overlay */}
+              <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 flex items-center justify-center px-6">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -64,7 +59,6 @@ export default function Hero() {
                   >
                     Explore Our Solutions
                   </Link>
-
                 </motion.div>
               </div>
             </div>

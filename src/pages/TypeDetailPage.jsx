@@ -9,11 +9,15 @@ export default function TypeDetailPage() {
     const type = category?.types.find((t) => t.id === typeId);
 
     if (!type)
-        return <div className="text-center p-10 text-red-600">Type Not Found</div>;
+        return (
+            <div className="text-center p-10 text-red-600 text-lg font-semibold">
+                Type Not Found
+            </div>
+        );
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Hero Banner */}
+            {/* 🌄 Hero Banner */}
             <div
                 className="relative h-[50vh] flex items-center justify-center"
                 style={{
@@ -33,21 +37,43 @@ export default function TypeDetailPage() {
                 </motion.h1>
             </div>
 
-            {/* Content */}
+            {/* 📄 Content Section */}
             <div className="max-w-5xl mx-auto py-16 px-6">
-                <p className="text-gray-700 text-lg leading-relaxed">{type.description}</p>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-gray-700 text-lg leading-relaxed mb-8 text-center"
+                >
+                    {type.description ||
+                        "Detailed information about this category type will appear here."}
+                </motion.p>
 
-                {type.subtypes && (
-                    <div className="mt-8">
-                        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Subtypes</h2>
-                        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                {/* ✅ Available Models Section */}
+                {type.subtypes && type.subtypes.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="mt-10"
+                    >
+                        <h2 className="text-2xl font-semibold mb-6 text-center text-blue-800">
+                            Available Models
+                        </h2>
+                        <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                             {type.subtypes.map((sub, i) => (
-                                <li key={i}>{sub}</li>
+                                <li
+                                    key={i}
+                                    className="bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition p-6 text-center font-medium text-gray-700 hover:text-blue-700"
+                                >
+                                    {sub}
+                                </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
                 )}
 
+                {/* 🔹 Navigation Buttons */}
                 <div className="mt-12 flex flex-wrap gap-4 justify-center">
                     <Link
                         to={`/category/${id}`}
