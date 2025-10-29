@@ -19,7 +19,12 @@ import heatpump from "../assets/Slides/heatpump.jpg"
 import glassShower from "../assets/Slides/glassShower.jpg"
 import glassRailing from "../assets/Slides/glassRailing.jpg"
 import lift from "../assets/Slides/lift.jpg"
-
+import cctv from "../assets/Slides/cctv.jpg"
+import vdp from "../assets/Slides/vdp.jpg"
+import smartDL from "../assets/Slides/smartDL.jpg"
+import homeAutomation from "../assets/Slides/homeAutomation.jpg"
+import lpg from "../assets/Slides/lpg.jpg"
+import gateAutomation from "../assets/Slides/gateAutomation.jpg"
 
 import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
@@ -39,25 +44,25 @@ export const slides = [
     title: "CCTV Cameras & Accessories",
     subtitle:
       "Comprehensive surveillance systems including CCTV cameras, wireless cameras, and accessories for security and monitoring.",
-    img: surveillance,
+    img: cctv,
   },
   {
     title: "Video Door Phone (VDP)",
     subtitle:
       "Smart video door communication systems for homes and offices with camera, mic, and remote access features.",
-    img: surveillance,
+    img: vdp,
   },
   {
     title: "Smart Digital Lock",
     subtitle:
       "Advanced keyless digital locks with fingerprint, keypad, and RFID access for maximum security and convenience.",
-    img: surveillance,
+    img: smartDL,
   },
   {
     title: "Home Automation",
     subtitle:
       "Smart lighting, voice control, hybrid home automation systems — modernize your home with one touch.",
-    img: home,
+    img: homeAutomation,
   },
   {
     title: "Curtain & Blind Operators",
@@ -81,13 +86,13 @@ export const slides = [
     title: "LPG Gas Line",
     subtitle:
       "Safe and durable LPG gas pipeline installation and copper fittings for homes and industries.",
-    img: gas,
+    img: lpg,
   },
   {
     title: "Gate Automation",
     subtitle:
       "Sliding, swing, and rolling gate automation systems with remote control and safety features.",
-    img: entrance,
+    img: gateAutomation,
   },
   {
     title: "Boom Barrier System",
