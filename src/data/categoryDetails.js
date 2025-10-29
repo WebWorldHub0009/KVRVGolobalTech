@@ -1,20 +1,21 @@
-// src/data/categoryDetails.js
+// ✅ src/data/categoryDetails.js
 import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
 import home from "../assets/home_automation.jpg";
-
 import renewable from "../assets/hero3.jpg";
+
 export const categoryDetails = {
     // 1️⃣ WATER TECH
     watertech: {
         title: "Water Solutions",
-        image: "/images/services/watertech/watertech.webp", // ✅ Add your hero image here
+        image: "/images/services/watertech/watertech.webp",
         introduction:
             "KR Water Tech Solutions provides comprehensive systems for purification, conditioning, and recycling of water. Designed for domestic, commercial, and industrial needs.",
         types: [
             {
                 id: "rowaterpurifiers",
                 name: "RO Water Purifiers",
+                image: "/images/services/watertech/ro.webp",
                 description:
                     "RO Water Purifiers remove dissolved salts and impurities using advanced membrane technology.",
                 subtypes: ["Wall Mounted", "Under the Sink"],
@@ -22,19 +23,22 @@ export const categoryDetails = {
             {
                 id: "watersofteners",
                 name: "Water Softeners",
+                image: "/images/services/watertech/softener.webp",
                 description:
                     "Water Softeners help reduce hardness by removing calcium and magnesium ions, extending appliance life.",
-                subtypes: ["Manual Water Softeners", "Automatic Water Softeners"],
+                subtypes: ["Manual", "Automatic"],
             },
             {
                 id: "waterconditioners",
                 name: "Water Conditioners",
+                image: "/images/services/watertech/conditioner.webp",
                 description:
                     "Water conditioners neutralize minerals and prevent scaling without removing beneficial minerals.",
             },
             {
                 id: "commercialro",
                 name: "Commercial RO & Water Treatment Plant",
+                image: "/images/services/watertech/commercialro.webp",
                 description:
                     "Advanced large-scale RO systems suitable for apartments, schools, and industries.",
                 subtypes: ["Manual", "Automatic"],
@@ -42,12 +46,14 @@ export const categoryDetails = {
             {
                 id: "stpwwtp",
                 name: "STP & WWTP",
+                image: "/images/services/watertech/stp.webp",
                 description:
                     "Sewage Treatment Plants and Waste Water Treatment Plants for sustainable waste management.",
             },
             {
                 id: "rwh",
                 name: "Rain Water Harvesting (RWH)",
+                image: "/images/services/watertech/rwh.webp",
                 description:
                     "Rainwater harvesting systems designed for water conservation and ground recharge.",
             },
@@ -70,6 +76,7 @@ export const categoryDetails = {
             {
                 id: "geysers",
                 name: "Geysers",
+                image: "/images/services/hotwater/geyser1.webp",
                 description:
                     "Compact and efficient heating units for domestic hot water use.",
                 subtypes: ["Domestic Geysers"],
@@ -77,6 +84,7 @@ export const categoryDetails = {
             {
                 id: "gujaratboilers",
                 name: "Gujarat Boilers",
+                image: "/images/services/hotwater/boiler.webp",
                 description:
                     "Reliable boilers designed for consistent hot water output.",
                 subtypes: ["Domestic Boilers"],
@@ -84,6 +92,7 @@ export const categoryDetails = {
             {
                 id: "solarheaters",
                 name: "Solar Water Heaters",
+                image: "/images/services/hotwater/solar.webp",
                 description:
                     "Solar-powered water heaters using renewable energy for heating.",
                 subtypes: ["ETC Type", "FPC Type"],
@@ -91,6 +100,7 @@ export const categoryDetails = {
             {
                 id: "heatpumps",
                 name: "Heat Pumps",
+                image: "/images/services/hotwater/heatpump.webp",
                 description:
                     "Energy-efficient heat pumps for both domestic and commercial use.",
                 subtypes: [
@@ -118,11 +128,13 @@ export const categoryDetails = {
             {
                 id: "waterpumps",
                 name: "Water Pumps",
+                image: "/images/services/pumps/waterpump.webp",
                 subtypes: ["Open Well Pumps", "Monoblock Pumps"],
             },
             {
                 id: "pressureboosters",
                 name: "Pressure Booster Pumps",
+                image: "/images/services/pumps/booster.webp",
                 subtypes: [
                     "Domestic (0.5HP–3HP)",
                     "Commercial – Mono Pressure",
@@ -133,11 +145,13 @@ export const categoryDetails = {
             {
                 id: "hotwaterrecirculation",
                 name: "Hot Water Re-Circulation Pumps",
+                image: "/images/services/pumps/recirculation.webp",
                 subtypes: ["Domestic", "Commercial"],
             },
             {
                 id: "controllers",
                 name: "Automatic Water Level Controllers & Indicators",
+                image: "/images/services/pumps/controller.webp",
             },
         ],
         applications: [
@@ -157,26 +171,24 @@ export const categoryDetails = {
             {
                 id: "acsplit",
                 name: "Split Air Conditioners",
+                image: "/images/services/ac/split.webp",
                 description:
                     "High-performance split AC units suitable for homes and offices.",
             },
             {
                 id: "acducted",
                 name: "Ducted & VRF Systems",
+                image: "/images/services/ac/vrf.webp",
                 description:
                     "Centralized air conditioning solutions for large spaces.",
             },
             {
                 id: "elevators",
                 name: "Elevators & Lifts",
+                image: "/images/services/ac/lift.webp",
                 description:
                     "Reliable and safe elevator systems for residential and commercial use.",
-                subtypes: [
-                    "Passenger Lift",
-                    "Home Lift",
-                    "Hospital Lift",
-                    "Goods Lift",
-                ],
+                subtypes: ["Passenger Lift", "Home Lift", "Hospital Lift", "Goods Lift"],
             },
         ],
         applications: [
@@ -196,12 +208,14 @@ export const categoryDetails = {
             {
                 id: "lpgline",
                 name: "LPG Gas Line",
+                image: "/images/services/gas/lpg.webp",
                 description:
                     "Expert installation of LPG pipelines for domestic and commercial spaces.",
             },
             {
                 id: "copperline",
                 name: "A/C Copper Line",
+                image: "/images/services/gas/copper.webp",
                 description:
                     "Durable copper piping systems for air conditioning and gas supply lines.",
             },
@@ -220,11 +234,31 @@ export const categoryDetails = {
         introduction:
             "Modern glass solutions that enhance aesthetics and functionality of architectural spaces.",
         types: [
-            { id: "shower", name: "Shower Partitions" },
-            { id: "railings", name: "Glass Railings" },
-            { id: "skylight", name: "Sky Light Glasses" },
-            { id: "windows", name: "Window Glasses" },
-            { id: "office", name: "Office Partitions" },
+            {
+                id: "shower",
+                name: "Shower Partitions",
+                image: "/images/services/glass/shower.webp",
+            },
+            {
+                id: "railings",
+                name: "Glass Railings",
+                image: "/images/services/glass/railing.webp",
+            },
+            {
+                id: "skylight",
+                name: "Sky Light Glasses",
+                image: "/images/services/glass/skylight.webp",
+            },
+            {
+                id: "windows",
+                name: "Window Glasses",
+                image: "/images/services/glass/window.webp",
+            },
+            {
+                id: "office",
+                name: "Office Partitions",
+                image: "/images/services/glass/office.webp",
+            },
         ],
         applications: [
             "Residential & Commercial Interiors",
@@ -240,11 +274,11 @@ export const categoryDetails = {
         introduction:
             "We offer advanced security and automation systems for complete home and office protection.",
         types: [
-            { id: "cctv", name: "CCTV Cameras" },
-            { id: "vdp", name: "Video Door Phones (VDP)" },
-            { id: "smartlocks", name: "Smart Digital Door Locks" },
-            { id: "gasdetectors", name: "Gas Leakage Detectors" },
-            { id: "alarmsensors", name: "Alarms & Sensors" },
+            { id: "cctv", name: "CCTV Cameras", image: "/images/services/surveillance/cctv.webp" },
+            { id: "vdp", name: "Video Door Phones (VDP)", image: "/images/services/surveillance/vdp.webp" },
+            { id: "smartlocks", name: "Smart Digital Door Locks", image: "/images/services/surveillance/lock.webp" },
+            { id: "gasdetectors", name: "Gas Leakage Detectors", image: "/images/services/surveillance/gas.webp" },
+            { id: "alarmsensors", name: "Alarms & Sensors", image: "/images/services/surveillance/alarm.webp" },
         ],
         applications: [
             "Homes & Apartments",
@@ -260,12 +294,12 @@ export const categoryDetails = {
         introduction:
             "Automated gate and shutter solutions for secure and efficient entry management.",
         types: [
-            { id: "slidinggate", name: "Sliding Gate Operator" },
-            { id: "swinggate", name: "Swing Gate Operator" },
-            { id: "rollingdoor", name: "Rolling Shutter Operator" },
-            { id: "highspeeddoor", name: "High Speed Door Operator" },
-            { id: "rapiddoor", name: "Rapid Door Operator" },
-            { id: "boombarrier", name: "Boom Barrier System" },
+            { id: "slidinggate", name: "Sliding Gate Operator", image: "/images/services/entrance/sliding.webp" },
+            { id: "swinggate", name: "Swing Gate Operator", image: "/images/services/entrance/swing.webp" },
+            { id: "rollingdoor", name: "Rolling Shutter Operator", image: "/images/services/entrance/rolling.webp" },
+            { id: "highspeeddoor", name: "High Speed Door Operator", image: "/images/services/entrance/highspeed.webp" },
+            { id: "rapiddoor", name: "Rapid Door Operator", image: "/images/services/entrance/rapid.webp" },
+            { id: "boombarrier", name: "Boom Barrier System", image: "/images/services/entrance/barrier.webp" },
         ],
         applications: [
             "Industrial Complexes",
@@ -281,9 +315,9 @@ export const categoryDetails = {
         introduction:
             "Smart automation solutions for controlling lighting, curtains, and home devices effortlessly.",
         types: [
-            { id: "light", name: "Light Automation" },
-            { id: "curtain", name: "Curtain Operators" },
-            { id: "blinds", name: "Blind Operators" },
+            { id: "light", name: "Light Automation", image: "/images/services/homeautomation/light.webp" },
+            { id: "curtain", name: "Curtain Operators", image: "/images/services/homeautomation/curtain.webp" },
+            { id: "blinds", name: "Blind Operators", image: "/images/services/homeautomation/blinds.webp" },
         ],
         applications: [
             "Smart Homes & Villas",
@@ -302,15 +336,21 @@ export const categoryDetails = {
             {
                 id: "rooftopsolarsystem",
                 name: "Roof-Top Solar Systems",
+                image: "/images/services/renewable/rooftop.webp",
                 subtypes: [
                     "Domestic – On-Grid, Off-Grid, Hybrid",
                     "Commercial – On-Grid, Off-Grid, Hybrid",
                 ],
             },
-            { id: "solarpumps", name: "Solar Pumps & Controllers" },
+            {
+                id: "solarpumps",
+                name: "Solar Pumps & Controllers",
+                image: "/images/services/renewable/solarpump.webp",
+            },
             {
                 id: "solarlights",
                 name: "Solar Lights",
+                image: "/images/services/renewable/solarlight.webp",
                 subtypes: ["Solar Street Lights", "Solar Fancy Lights"],
             },
         ],
