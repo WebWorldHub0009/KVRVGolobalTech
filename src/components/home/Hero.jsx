@@ -8,6 +8,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 export default function Hero() {
+  const titleToIdMap = {
+    "Water Solutions": "watertech",
+    "Hot Water Solutions": "hotwatertech",
+    "Pumps & Controllers": "pumps",
+    "Air Conditioners & Elevators (Lift)": "acelevators",
+    "Gas Tech Solutions": "gastech",
+    "Glass Tech Solutions": "glasstech",
+    "Surveillance Systems & Smart Gadgets": "surveillance",
+    "Entrance Automation Systems": "entranceautomation",
+    "Home Automation": "homeautomation",
+    "Renewable Energy Solutions": "renewableenergy",
+  };
+
   return (
     <section className="relative">
       <Swiper
@@ -46,11 +59,12 @@ export default function Hero() {
                   </p>
 
                   <Link
-                    to={`/category/${s.title.toLowerCase().replace(/\s+/g, "")}`}
+                    to={`/category/${titleToIdMap[s.title] || s.title.toLowerCase().replace(/\s+/g, "")}`}
                     className="inline-block mt-8 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-transform transform hover:scale-105"
                   >
                     Explore Our Solutions
                   </Link>
+
                 </motion.div>
               </div>
             </div>
