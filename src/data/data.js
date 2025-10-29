@@ -1,12 +1,31 @@
 // for hero 
-import hero1 from "../assets/hero1.jpg"
-import hero5 from "../assets/hero5.png"
-import hero6 from "../assets/hero6.png"
+// import hero1 from "../assets/hero1.jpg"
+// import hero5 from "../assets/hero5.png"
+import solar from "../assets/hero6.png"
+
+import curtain from "../assets/Slides/curtain.png"
+import blinds from "../assets/Slides/blinds.webp"
+import mosquito from "../assets/Slides/mosquito.webp"
+import barrier from "../assets/Slides/barrier.webp"
+import inverter from "../assets/Slides/inverter.png"
+import ro from "../assets/Slides/ro.webp"
+import waterSoftener from "../assets/Slides/waterSoftener.jpg"
+import commercialRO from "../assets/Slides/commercialRO.jpg"
+import rainwater from "../assets/Slides/rainwater.jpg"
+import pump from "../assets/Slides/pump.jpg"
+import pump1 from "../assets/Slides/pump1.jpg"
+import solarHeater from "../assets/Slides/solarHeater.jpg"
+import heatpump from "../assets/Slides/heatpump.jpg"
+import glassShower from "../assets/Slides/glassShower.jpg"
+import glassRailing from "../assets/Slides/glassRailing.jpg"
+import lift from "../assets/Slides/lift.jpg"
+
+
 import surveillance from "../assets/AboutPageImg/surveillance.jpg";
 import entrance from "../assets/AboutPageImg/entrance1.jpg";
 import renewable from "../assets/hero3.jpg";
 import WaterTechnology from "../assets/AboutPageImg/WaterTechnology.jpg";
-import Pump from "../assets/AboutPageImg/pump&Controle.jpg";
+// import Pump from "../assets/AboutPageImg/pump&Controle.jpg";
 import ac from "../assets/AboutPageImg/ac.webp";
 import gas from "../assets/AboutPageImg/gas.webp";
 import glass from "../assets/AboutPageImg/glass.webp";
@@ -14,67 +33,154 @@ import home from "../assets/home_automation.jpg";
 import p1 from "../assets/home_automation.jpg";
 import p2 from "../assets/solar.jpg";
 import p3 from "../assets/water_purification.webp"
-import hotwater from "/images/services/hotwater/geyser.webp"
+// import hotwater from "/images/services/hotwater/geyser.webp"
 export const slides = [
   {
-    title: "Water Tech",
+    title: "CCTV Cameras & Accessories",
     subtitle:
-      "RO Water Purifiers, Water Softeners, Sand Filters, Carbon Filters, Commercial RO Systems, STP, WWTP, DM Plants, Rain Water Harvesting (RWH)",
-    img: WaterTechnology, // apna image daalna
+      "Comprehensive surveillance systems including CCTV cameras, wireless cameras, and accessories for security and monitoring.",
+    img: surveillance,
   },
   {
-    title: "Hot Water Tech",
+    title: "Video Door Phone (VDP)",
     subtitle:
-      "Heat Pump (Hot Water System), Geysers, Solar Water Heaters, Gujarat Boiler",
-    img: hotwater, // apna image daalna
+      "Smart video door communication systems for homes and offices with camera, mic, and remote access features.",
+    img: surveillance,
   },
   {
-    title: "Pumps & Controllers",
+    title: "Smart Digital Lock",
     subtitle:
-      "Pressure Booster Pumps, Water Pumps, Automatic Water Level Controllers, Water Level Indicators",
-    img: Pump, // apna image daalna
-  },
-  {
-    title: "Air Conditioners & Elevators (Lift)",
-    subtitle:
-      "Efficient Air Conditioning and Modern Elevator Systems for Commercial and Residential Spaces",
-    img: ac, // apna image daalna
-  },
-  {
-    title: "Gas Tech",
-    subtitle: "LPG Gas Line, A/C Copper Line",
-    img: "/images/services/gas/lpg.webp", // apna image daalna
-  },
-  {
-    title: "Glass Tech",
-    subtitle:
-      "Shower Partitions, Glass Railings, Sky Light Glasses, Window Glasses, Office Partitions",
-    img: glass, // apna image daalna
-  },
-  {
-    title: "Surveillance Systems & Smart Gadgets",
-    subtitle:
-      "CCTV Cameras, Video Door Phone (VDP), Smart Digital Door Locks, Gas Leakage Detectors, Alarm & Sensors",
-    img: surveillance, // apna image daalna
-  },
-  {
-    title: "Entrance Automation",
-    subtitle:
-      "Sliding Gate Operator, Swing Gate Operator, Rolling Shutter Operator, High Speed Door Operator, Rapid Door Operator, Boom Barrier System",
-    img: entrance, // apna image daalna
+      "Advanced keyless digital locks with fingerprint, keypad, and RFID access for maximum security and convenience.",
+    img: surveillance,
   },
   {
     title: "Home Automation",
-    subtitle: "Light Automation, Curtain Operators, Blind Operators",
-    img: home, // apna image daalna
+    subtitle:
+      "Smart lighting, voice control, hybrid home automation systems — modernize your home with one touch.",
+    img: home,
   },
   {
-    title: "Renewable Energy Source",
+    title: "Curtain & Blind Operators",
     subtitle:
-      "Roof-Top Solar System, Solar Pumps, UPS & Inverters, Solar Street Lights, Solar Fancy Lights",
-    img: renewable, // apna image daalna
+      "Motorized curtain and blind systems — WiFi, Zigbee, remote control, and voice integration.",
+    img: curtain,
+  },
+  {
+    title: "Blinds & Curtains",
+    subtitle:
+      "Stylish designer blinds & curtains that enhance your interior while offering smart automation compatibility.",
+    img: blinds,
+  },
+  {
+    title: "Mosquito Net",
+    subtitle:
+      "Retractable and sliding mosquito net systems — durable, aesthetic, and convenient for all window types.",
+    img: mosquito,
+  },
+  {
+    title: "LPG Gas Line",
+    subtitle:
+      "Safe and durable LPG gas pipeline installation and copper fittings for homes and industries.",
+    img: gas,
+  },
+  {
+    title: "Gate Automation",
+    subtitle:
+      "Sliding, swing, and rolling gate automation systems with remote control and safety features.",
+    img: entrance,
+  },
+  {
+    title: "Boom Barrier System",
+    subtitle:
+      "Automatic boom barrier solutions for parking, industrial, and commercial premises — reliable access control.",
+    img: barrier,
+  },
+  {
+    title: "Solar Power Grid System",
+    subtitle:
+      "On-grid, off-grid, and hybrid solar systems — generate sustainable power for residential and commercial use.",
+    img: solar,
+  },
+  {
+    title: "UPS & Inverters",
+    subtitle:
+      "Reliable UPS and inverter systems for uninterrupted power backup and smooth energy management.",
+    img: inverter,
+  },
+  {
+    title: "RO Water Purifiers",
+    subtitle:
+      "Domestic and commercial RO systems — providing clean, safe, and pure drinking water.",
+    img: ro,
+  },
+  {
+    title: "Water Softener & Sand Filter",
+    subtitle:
+      "Water treatment systems including softeners, sand filters, and carbon filters for effective purification.",
+    img: waterSoftener,
+  },
+  {
+    title: "Commercial RO System",
+    subtitle:
+      "Industrial-grade RO plants for factories, apartments, and institutions — high capacity & performance.",
+    img: commercialRO,
+  },
+  {
+    title: "Rain Water Filter (RWF)",
+    subtitle:
+      "Rainwater harvesting and filtration systems for sustainable and eco-friendly water conservation.",
+    img: rainwater,
+  },
+  {
+    title: "Pump & Controllers",
+    subtitle:
+      "Pressure booster pumps, submersible pumps, and smart water controllers for efficient water management.",
+    img: pump,
+  },
+  {
+    title: "Automatic Water Level Controller",
+    subtitle:
+      "Automatic systems to maintain tank water levels, prevent overflow, and ensure consistent water supply.",
+    img: pump1,
+  },
+  {
+    title: "Solar Water Heater",
+    subtitle:
+      "Energy-efficient solar water heating systems for residential and industrial applications.",
+    img: solarHeater,
+  },
+  {
+    title: "Heat Pump (Hot Water System)",
+    subtitle:
+      "Environment-friendly heat pump solutions for hot water generation with low energy consumption.",
+    img: heatpump,
+  },
+  {
+    title: "Glass Shower Partition",
+    subtitle:
+      "Elegant and durable glass shower enclosures designed for modern bathrooms.",
+    img: glassShower,
+  },
+  {
+    title: "Glass Railing & Partitions",
+    subtitle:
+      "Stylish glass railings and partitions ideal for offices, balconies, and modern interiors.",
+    img: glassRailing,
+  },
+  {
+    title: "Elevators (Lift)",
+    subtitle:
+      "Premium residential and commercial elevator solutions — smooth, safe, and elegant.",
+    img: lift,
+  },
+  {
+    title: "Air Conditioners",
+    subtitle:
+      "Energy-efficient air conditioning systems for homes, offices, and industrial setups.",
+    img: ac,
   },
 ];
+
 
 
 export const testimonials = [
