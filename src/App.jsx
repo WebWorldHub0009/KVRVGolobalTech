@@ -2,6 +2,8 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/layouts/Layout'
 import Home from './pages/Home'
+import CategoryPage from './pages/CategoryPage'
+import TypeDetailPage from './pages/TypeDetailPage'
 import AboutUs from "./pages/AboutPage"
 import ContactUs from './pages/ContactPage'
 import ServicePage from './pages/ServicePage'
@@ -14,6 +16,9 @@ function App() {
     <Layout>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path="/category/:id" element={<CategoryPage />} />
+        <Route path="/category/:id/type/:typeId" element={<TypeDetailPage />} />
+
         <Route path='/about' element={<AboutUs />} />
         <Route path='/video' element={<VideoShowcase />} />
         <Route path='/gallery' element={<Gallery />} />
