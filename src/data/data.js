@@ -43,7 +43,7 @@ export const slides = [
   {
     title: "Gas Tech",
     subtitle: "LPG Gas Line, A/C Copper Line",
-    img: gas, // apna image daalna
+    img: "/images/services/gas/lpg.webp", // apna image daalna
   },
   {
     title: "Glass Tech",

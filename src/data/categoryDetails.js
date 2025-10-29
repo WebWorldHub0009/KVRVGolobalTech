@@ -76,7 +76,7 @@ export const categoryDetails = {
             {
                 id: "geysers",
                 name: "Geysers",
-                image: "/images/services/hotwater/geyser1.webp",
+                image: "/images/services/hotwater/geyser.webp",
                 description:
                     "Compact and efficient heating units for domestic hot water use.",
                 subtypes: ["Domestic Geysers"],
@@ -171,7 +171,7 @@ export const categoryDetails = {
             {
                 id: "acsplit",
                 name: "Split Air Conditioners",
-                image: "/images/services/ac/split.webp",
+                image: "/images/services/ac/air-conditioner.webp",
                 description:
                     "High-performance split AC units suitable for homes and offices.",
             },
@@ -215,7 +215,7 @@ export const categoryDetails = {
             {
                 id: "copperline",
                 name: "A/C Copper Line",
-                image: "/images/services/gas/copper.webp",
+                image: "/images/services/gas/gas-pipeline.webp",
                 description:
                     "Durable copper piping systems for air conditioning and gas supply lines.",
             },
