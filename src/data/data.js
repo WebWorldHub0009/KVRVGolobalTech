@@ -41,150 +41,151 @@ import p3 from "../assets/water_purification.webp"
 // import hotwater from "/images/services/hotwater/geyser.webp"
 export const slides = [
   {
+    id: "cctv-cameras-accessories",
     title: "CCTV Cameras & Accessories",
-    subtitle:
-      "Comprehensive surveillance systems including CCTV cameras, wireless cameras, and accessories for security and monitoring.",
+    subtitle: "Comprehensive surveillance systems including CCTV cameras, wireless cameras, and accessories for security and monitoring.",
     img: cctv,
   },
   {
+    id: "video-door-phone",
     title: "Video Door Phone (VDP)",
-    subtitle:
-      "Smart video door communication systems for homes and offices with camera, mic, and remote access features.",
+    subtitle: "Smart video door communication systems for homes and offices with camera, mic, and remote access features.",
     img: vdp,
   },
   {
+    id: "smart-digital-lock",
     title: "Smart Digital Lock",
-    subtitle:
-      "Advanced keyless digital locks with fingerprint, keypad, and RFID access for maximum security and convenience.",
+    subtitle: "Advanced keyless digital locks with fingerprint, keypad, and RFID access for maximum security and convenience.",
     img: smartDL,
   },
   {
+    id: "home-automation",
     title: "Home Automation",
-    subtitle:
-      "Smart lighting, voice control, hybrid home automation systems — modernize your home with one touch.",
+    subtitle: "Smart lighting, voice control, hybrid home automation systems — modernize your home with one touch.",
     img: homeAutomation,
   },
   {
+    id: "curtain-blind-operators",
     title: "Curtain & Blind Operators",
-    subtitle:
-      "Motorized curtain and blind systems — WiFi, Zigbee, remote control, and voice integration.",
+    subtitle: "Motorized curtain and blind systems — WiFi, Zigbee, remote control, and voice integration.",
     img: curtain,
   },
   {
+    id: "blinds-curtains",
     title: "Blinds & Curtains",
-    subtitle:
-      "Stylish designer blinds & curtains that enhance your interior while offering smart automation compatibility.",
+    subtitle: "Stylish designer blinds & curtains that enhance your interior while offering smart automation compatibility.",
     img: blinds,
   },
   {
+    id: "mosquito-net",
     title: "Mosquito Net",
-    subtitle:
-      "Retractable and sliding mosquito net systems — durable, aesthetic, and convenient for all window types.",
+    subtitle: "Retractable and sliding mosquito net systems — durable, aesthetic, and convenient for all window types.",
     img: mosquito,
   },
   {
+    id: "lpg-gas-line",
     title: "LPG Gas Line",
-    subtitle:
-      "Safe and durable LPG gas pipeline installation and copper fittings for homes and industries.",
+    subtitle: "Safe and durable LPG gas pipeline installation and copper fittings for homes and industries.",
     img: lpg,
   },
   {
+    id: "gate-automation",
     title: "Gate Automation",
-    subtitle:
-      "Sliding, swing, and rolling gate automation systems with remote control and safety features.",
+    subtitle: "Sliding, swing, and rolling gate automation systems with remote control and safety features.",
     img: gateAutomation,
   },
   {
+    id: "boom-barrier-system",
     title: "Boom Barrier System",
-    subtitle:
-      "Automatic boom barrier solutions for parking, industrial, and commercial premises — reliable access control.",
+    subtitle: "Automatic boom barrier solutions for parking, industrial, and commercial premises — reliable access control.",
     img: barrier,
   },
   {
+    id: "solar-power-grid-system",
     title: "Solar Power Grid System",
-    subtitle:
-      "On-grid, off-grid, and hybrid solar systems — generate sustainable power for residential and commercial use.",
+    subtitle: "On-grid, off-grid, and hybrid solar systems — generate sustainable power for residential and commercial use.",
     img: solar,
   },
   {
+    id: "ups-inverters",
     title: "UPS & Inverters",
-    subtitle:
-      "Reliable UPS and inverter systems for uninterrupted power backup and smooth energy management.",
+    subtitle: "Reliable UPS and inverter systems for uninterrupted power backup and smooth energy management.",
     img: inverter,
   },
   {
+    id: "ro-water-purifiers",
     title: "RO Water Purifiers",
-    subtitle:
-      "Domestic and commercial RO systems — providing clean, safe, and pure drinking water.",
+    subtitle: "Domestic and commercial RO systems — providing clean, safe, and pure drinking water.",
     img: ro,
   },
   {
+    id: "water-softener-sand-filter",
     title: "Water Softener & Sand Filter",
-    subtitle:
-      "Water treatment systems including softeners, sand filters, and carbon filters for effective purification.",
+    subtitle: "Water treatment systems including softeners, sand filters, and carbon filters for effective purification.",
     img: waterSoftener,
   },
   {
+    id: "commercial-ro-system",
     title: "Commercial RO System",
-    subtitle:
-      "Industrial-grade RO plants for factories, apartments, and institutions — high capacity & performance.",
+    subtitle: "Industrial-grade RO plants for factories, apartments, and institutions — high capacity & performance.",
     img: commercialRO,
   },
   {
+    id: "rain-water-filter",
     title: "Rain Water Filter (RWF)",
-    subtitle:
-      "Rainwater harvesting and filtration systems for sustainable and eco-friendly water conservation.",
+    subtitle: "Rainwater harvesting and filtration systems for sustainable and eco-friendly water conservation.",
     img: rainwater,
   },
   {
+    id: "pump-controllers",
     title: "Pump & Controllers",
-    subtitle:
-      "Pressure booster pumps, submersible pumps, and smart water controllers for efficient water management.",
+    subtitle: "Pressure booster pumps, submersible pumps, and smart water controllers for efficient water management.",
     img: pump,
   },
   {
+    id: "automatic-water-level-controller",
     title: "Automatic Water Level Controller",
-    subtitle:
-      "Automatic systems to maintain tank water levels, prevent overflow, and ensure consistent water supply.",
+    subtitle: "Automatic systems to maintain tank water levels, prevent overflow, and ensure consistent water supply.",
     img: pump1,
   },
   {
+    id: "solar-water-heater",
     title: "Solar Water Heater",
-    subtitle:
-      "Energy-efficient solar water heating systems for residential and industrial applications.",
+    subtitle: "Energy-efficient solar water heating systems for residential and industrial applications.",
     img: solarHeater,
   },
   {
+    id: "heat-pump",
     title: "Heat Pump (Hot Water System)",
-    subtitle:
-      "Environment-friendly heat pump solutions for hot water generation with low energy consumption.",
+    subtitle: "Environment-friendly heat pump solutions for hot water generation with low energy consumption.",
     img: heatpump,
   },
   {
+    id: "glass-shower-partition",
     title: "Glass Shower Partition",
-    subtitle:
-      "Elegant and durable glass shower enclosures designed for modern bathrooms.",
+    subtitle: "Elegant and durable glass shower enclosures designed for modern bathrooms.",
     img: glassShower,
   },
   {
+    id: "glass-railing-partitions",
     title: "Glass Railing & Partitions",
-    subtitle:
-      "Stylish glass railings and partitions ideal for offices, balconies, and modern interiors.",
+    subtitle: "Stylish glass railings and partitions ideal for offices, balconies, and modern interiors.",
     img: glassRailing,
   },
   {
+    id: "elevators",
     title: "Elevators (Lift)",
-    subtitle:
-      "Premium residential and commercial elevator solutions — smooth, safe, and elegant.",
+    subtitle: "Premium residential and commercial elevator solutions — smooth, safe, and elegant.",
     img: lift,
   },
   {
+    id: "air-conditioners",
     title: "Air Conditioners",
-    subtitle:
-      "Energy-efficient air conditioning systems for homes, offices, and industrial setups.",
+    subtitle: "Energy-efficient air conditioning systems for homes, offices, and industrial setups.",
     img: ac,
   },
 ];
+
 
 
 

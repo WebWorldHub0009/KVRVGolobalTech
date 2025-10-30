@@ -1,102 +1,106 @@
+// src/pages/CategoryPage.jsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { categoryDetails } from "../data/categoryDetails";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export default function CategoryPage() {
     const { id } = useParams();
-    const category = categoryDetails[id];
 
-    if (!category)
+    // ✅ Normalize ID safely to match object keys like "cctv_cameras"
+    const normalizedId = id
+        ?.toLowerCase()
+        .replace(/[-\s&]+/g, "_") // handles spaces, dashes & ampersands
+        .replace(/_{2,}/g, "_")   // clean multiple underscores
+        .trim();
+
+    const category = categoryDetails[normalizedId];
+    console.log("🧭 Route Param (id):", id);
+    console.log("🧮 Normalized ID:", normalizedId);
+    console.log("📂 Available Keys:", Object.keys(categoryDetails));
+
+
+    if (!category) {
+        console.warn("❌ Category not found for ID:", id);
+        console.warn("✅ Available keys:", Object.keys(categoryDetails));
         return (
-            <div className="text-center p-10 text-red-600 text-lg font-semibold">
-                Category Not Found
+            <div className="flex flex-col items-center justify-center h-[70vh] text-center">
+                <h2 className="text-3xl font-bold mb-4 text-red-600">Category Not Found</h2>
+                <p className="text-gray-600 mb-4">
+                    The category <strong>{id}</strong> doesn’t exist or has a name mismatch.
+                </p>
+                <Link to="/" className="text-blue-500 underline">
+                    Go back to Home
+                </Link>
             </div>
         );
+    }
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            {/* 🌄 Hero Banner */}
+        <div className="py-16 bg-gray-50">
+            {/* ✅ SEO Meta Tags */}
+            <Helmet>
+                <title>{`${category.title} | KVRV Global Tech`}</title>
+                <meta
+                    name="description"
+                    content={`Explore ${category.title} solutions including ${category.types
+                        .map((t) => t.name)
+                        .join(", ")} and more from KVRV Global Tech.`}
+                />
+            </Helmet>
+
+            {/* ✅ Hero Section */}
             <div
-                className="relative h-[50vh] flex items-center justify-center"
-                style={{
-                    backgroundImage: `url(${category.image || "/banner.jpg"})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
+                className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
+                style={{ backgroundImage: `url(${category.image || "/images/placeholder.webp"})` }}
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center px-6"
-                >
+                <div className="absolute inset-0 bg-black bg-opacity-50" />
+                <h1 className="text-white text-4xl md:text-6xl font-bold relative z-10 text-center">
                     {category.title}
-                </motion.h1>
+                </h1>
             </div>
 
-            {/* 📄 Content Section */}
-            <div className="max-w-6xl mx-auto py-16 px-6">
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-gray-700 text-lg leading-relaxed mb-10 text-center"
-                >
-                    {category.description ||
-                        "Explore the available types under this category."}
-                </motion.p>
+            {/* ✅ Breadcrumb */}
+            <div className="mt-6 text-sm text-gray-600 px-6">
+                <Link to="/" className="hover:text-blue-600">
+                    Home
+                </Link>{" "}
+                &gt;{" "}
+                <span className="text-blue-600 font-semibold">{category.title}</span>
+            </div>
 
-                {/* 🔹 Type Cards */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
-                >
-                    {category.types.map((type) => (
-                        <Link
-                            key={type.id}
-                            to={`/category/${id}/type/${type.id}`}
-                            className="bg-white rounded-xl border border-gray-200 shadow hover:shadow-lg transition overflow-hidden group"
-                        >
+            {/* ✅ Intro */}
+            <motion.p
+                className="text-gray-700 text-lg leading-relaxed my-10 text-center px-6 md:px-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+            >
+                {category.introduction || "Explore our innovative solutions."}
+            </motion.p>
+
+            {/* ✅ Type Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:px-20">
+                {category.types.map((type) => (
+                    <motion.div
+                        key={type.id}
+                        whileHover={{ scale: 1.05 }}
+                        className="relative rounded-xl overflow-hidden shadow-lg bg-white"
+                    >
+                        <Link to={`/category/${normalizedId}/type/${type.id}`}>
                             <div
-                                className="h-48 bg-cover bg-center"
-                                style={{
-                                    backgroundImage: `url(${type.image || category.image})`,
-                                }}
+                                className="h-60 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${type.image || "/images/placeholder.webp"})` }}
                             />
-                            <div className="p-6 text-center">
-                                <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-700 transition">
-                                    {type.name}
-                                </h3>
-
-                                {/* ✅ Model Count */}
-                                {type.subtypes && (
-                                    <p className="text-gray-600 text-sm mt-2">
-                                        {type.subtypes.length} Available Model
-                                        {type.subtypes.length > 1 ? "s" : ""}
-                                    </p>
-                                )}
-
-                                <p className="text-gray-500 text-sm mt-3 line-clamp-2">
-                                    {type.description || "Learn more about this type."}
+                            <div className="p-5 text-center">
+                                <h3 className="text-xl font-semibold text-gray-800">{type.name}</h3>
+                                <p className="text-gray-600 mt-2 text-sm line-clamp-3">
+                                    {type.description}
                                 </p>
                             </div>
                         </Link>
-                    ))}
-                </motion.div>
-
-                {/* 🔙 Navigation */}
-                <div className="mt-14 text-center">
-                    <Link
-                        to="/"
-                        className="bg-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-400 transition"
-                    >
-                        Back to Home
-                    </Link>
-                </div>
+                    </motion.div>
+                ))}
             </div>
         </div>
     );
