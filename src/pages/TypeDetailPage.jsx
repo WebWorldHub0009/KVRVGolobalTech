@@ -8,27 +8,60 @@ import { Helmet } from "react-helmet";
 export default function TypeDetailPage() {
     const { id, typeId } = useParams();
 
-    // ✅ Normalize category & type IDs
-    const normalizedId = id?.toLowerCase().replace(/\s+/g, "_");
-    const normalizedTypeId = typeId?.toLowerCase().replace(/\s+/g, "_");
+    // ✅ Normalize and safely decode IDs
+    const normalizedId = id
+        ?.toLowerCase()
+        .replace(/[-\s&]+/g, "_")
+        .replace(/_{2,}/g, "_")
+        .trim();
 
-    // ✅ Fetch category & type safely
+    const decodedTypeId = decodeURIComponent(typeId || "").trim();
+    const normalizedTypeId = decodedTypeId
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "");
+
     const category = categoryDetails[normalizedId];
-    const type = category?.types.find((t) => t.id.toLowerCase() === normalizedTypeId);
 
-    // ✅ Handle not found cases gracefully
-    if (!category || !type) {
-        console.warn("❌ Type not found:", { id, typeId });
-        console.info("✅ Available categories:", Object.keys(categoryDetails));
+    // 🟥 Category not found
+    if (!category) {
+        return (
+            <div className="flex flex-col items-center justify-center h-[70vh] text-center">
+                <h2 className="text-3xl font-bold mb-4 text-red-600">
+                    Category Not Found
+                </h2>
+                <p className="text-gray-600 mb-4">
+                    The category <strong>{id}</strong> doesn’t exist or has a name mismatch.
+                </p>
+                <Link to="/" className="text-blue-500 underline">
+                    Go back to Home
+                </Link>
+            </div>
+        );
+    }
+
+    // ✅ Find type using both id and normalized name
+    const type =
+        category.types?.find(
+            (t) =>
+                t.id?.toLowerCase() === normalizedTypeId ||
+                t.name
+                    ?.toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "_")
+                    .replace(/^_+|_+$/g, "") === normalizedTypeId
+        ) || null;
+
+    // 🟥 Type not found
+    if (!type) {
         return (
             <div className="flex flex-col items-center justify-center h-[70vh] text-center">
                 <h2 className="text-3xl font-bold mb-4 text-red-600">Type Not Found</h2>
                 <p className="text-gray-600 mb-4">
-                    The product type <strong>{typeId}</strong> was not found under{" "}
-                    <strong>{id}</strong>.
+                    Type ID mismatch or missing data for:{" "}
+                    <strong>{decodedTypeId || "undefined"}</strong>
                 </p>
-                <Link to="/" className="text-blue-500 underline">
-                    Go back to Home
+                <Link to={`/category/${normalizedId}`} className="text-blue-500 underline">
+                    Back to {category.title}
                 </Link>
             </div>
         );
@@ -41,24 +74,29 @@ export default function TypeDetailPage() {
                 <title>{`${type.name} | ${category.title} | KVRV Global Tech`}</title>
                 <meta
                     name="description"
-                    content={`Learn more about ${type.name} under ${category.title}. ${type.description || ""}`}
+                    content={`Discover ${type.name} under ${category.title} solutions by KVRV Global Tech. Learn about its models, features, and benefits.`}
                 />
             </Helmet>
 
             {/* ✅ Hero Section */}
             <div
-                className="relative h-[45vh] bg-cover bg-center flex items-center justify-center"
-                style={{ backgroundImage: `url(${type.image || "/images/placeholder.webp"})` }}
+                className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
+                style={{
+                    backgroundImage: `url(${type.image || category.image || "/images/placeholder.webp"})`,
+                }}
             >
                 <div className="absolute inset-0 bg-black bg-opacity-50" />
-                <h1 className="text-white text-4xl md:text-5xl font-bold relative z-10 text-center">
+                <h1 className="text-white text-4xl md:text-6xl font-bold relative z-10 text-center">
                     {type.name}
                 </h1>
             </div>
 
             {/* ✅ Breadcrumb */}
             <div className="mt-6 text-sm text-gray-600 px-6">
-                <Link to="/" className="hover:text-blue-600">Home</Link> &gt;{" "}
+                <Link to="/" className="hover:text-blue-600">
+                    Home
+                </Link>{" "}
+                &gt;{" "}
                 <Link to={`/category/${normalizedId}`} className="hover:text-blue-600">
                     {category.title}
                 </Link>{" "}
@@ -66,52 +104,46 @@ export default function TypeDetailPage() {
                 <span className="text-blue-600 font-semibold">{type.name}</span>
             </div>
 
-            {/* ✅ Description Section */}
-            <motion.div
-                className="mt-10 px-6 md:px-20 text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-            >
-                <p className="text-gray-700 text-lg mb-10 leading-relaxed">
-                    {type.description ||
-                        "Detailed information about this product type will be available soon."}
-                </p>
+            {/* ✅ Description */}
+            {type.description && (
+                <motion.p
+                    className="text-gray-700 text-lg leading-relaxed my-10 text-center px-6 md:px-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                >
+                    {type.description}
+                </motion.p>
+            )}
 
-                {/* ✅ Subtypes Grid */}
-                {type.subtypes && type.subtypes.length > 0 && (
-                    <div className="mt-12">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                            Available Models
-                        </h2>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            {type.subtypes.map((sub, index) => (
-                                <li
-                                    key={index}
-                                    className="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition text-gray-700"
-                                >
-                                    {typeof sub === "string" ? sub : sub.name}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+            {/* ✅ Subtypes */}
+            {type.subtypes && type.subtypes.length > 0 && (
+                <section className="px-6 md:px-20 my-10">
+                    <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+                        Available Models
+                    </h2>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc list-inside text-gray-700">
+                        {type.subtypes.map((sub, index) => (
+                            <li key={index}>
+                                {typeof sub === "string" ? sub : sub.name}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )}
 
-                {/* ✅ Navigation Buttons */}
-                <div className="mt-16 flex flex-wrap gap-4 justify-center">
-                    <Link
-                        to={`/category/${normalizedId}`}
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-                    >
-                        ← Back to {category.title}
-                    </Link>
-                    <Link
-                        to="/"
-                        className="bg-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-400 transition"
-                    >
-                        🏠 Home
-                    </Link>
-                </div>
-            </motion.div>
+            {/* ✅ Category-level Features */}
+            {category.features && (
+                <section className="px-6 md:px-20 my-10">
+                    <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+                        Key Features
+                    </h2>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc list-inside text-gray-700">
+                        {category.features.map((f, i) => (
+                            <li key={i}>{f}</li>
+                        ))}
+                    </ul>
+                </section>
+            )}
         </div>
     );
 }
