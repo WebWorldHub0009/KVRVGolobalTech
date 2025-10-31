@@ -1,7 +1,7 @@
 export const categoryDetails = {
     cctvcameras_accessories: {
         title: "CCTV Cameras & Accessories",
-        image: "/images/services/cctv_cameras_accessories/cctv.webp",
+        image: "/images/services/cctv_cameras/cctv.jpg",
         introduction:
             "KVRV Global Tech provides advanced CCTV cameras and surveillance accessories designed for maximum safety and 24/7 visual monitoring. Our systems enable remote access, motion detection, and high-definition video recording, ensuring total control over your environment. Ideal for homes, offices, and industrial spaces, these solutions combine affordability, reliability, and security in one package.",
         features: [

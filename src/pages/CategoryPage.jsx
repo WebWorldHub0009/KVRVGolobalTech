@@ -1,164 +1,234 @@
-// src/pages/CategoryPage.jsx
-import React from "react";
-import { useParams, Link } from "react-router-dom";
+// src/components/CategoryPage.jsx
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { categoryDetails } from "../data/categoryDetails";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
 
 export default function CategoryPage() {
-    const { id } = useParams();
+    const { categoryKey } = useParams();
+    const category = categoryDetails[categoryKey];
 
-    // ✅ Normalize ID safely to match keys like "solar_water_heater"
-    const normalizedId = id
-        ?.toLowerCase()
-        .replace(/[-\s&]+/g, "_")
-        .replace(/_{2,}/g, "_")
-        .trim();
+    // modal state
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeType, setActiveType] = useState(null);
 
-    const category = categoryDetails[normalizedId];
+    // close on ESC
+    useEffect(() => {
+        const onKey = (e) => {
+            if (e.key === "Escape") {
+                setIsOpen(false);
+                setActiveType(null);
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, []);
 
     if (!category) {
         return (
-            <div className="flex flex-col items-center justify-center h-[70vh] text-center">
-                <h2 className="text-3xl font-bold mb-4 text-red-600">Category Not Found</h2>
-                <p className="text-gray-600 mb-4">
-                    The category <strong>{id}</strong> doesn’t exist or has a name mismatch.
-                </p>
-                <Link to="/" className="text-blue-500 underline">
-                    Go back to Home
-                </Link>
+            <div className="min-h-screen flex items-center justify-center text-gray-700 text-xl">
+                Category not found.
             </div>
         );
     }
 
+    // helper to normalise type entries (string or object)
+    const normalizeType = (t) =>
+        typeof t === "string"
+            ? { id: null, name: t, image: null, description: null, subtypes: null }
+            : {
+                id: t.id ?? null,
+                name: t.name ?? t.title ?? "Unnamed Type",
+                image: t.image ?? null,
+                description: t.description ?? null,
+                subtypes: t.subtypes ?? null,
+            };
+
     return (
-        <div className="py-16 bg-gray-50">
-            {/* ✅ SEO Meta Tags */}
-            <Helmet>
-                <title>{`${category.title} | KVRV Global Tech`}</title>
-                <meta
-                    name="description"
-                    content={`Explore ${category.title} solutions including ${category.types
-                        ?.map((t) => t.name)
-                        ?.join(", ")} and more from KVRV Global Tech.`}
-                />
-            </Helmet>
-
-            {/* ✅ Hero Section */}
+        <section className="bg-gray-50 min-h-screen">
+            {/* Hero */}
             <div
-                className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-                style={{ backgroundImage: `url(${category.image || "/images/placeholder.webp"})` }}
+                className="relative w-full h-[50vh] bg-cover bg-center"
+                style={{ backgroundImage: `url(${category.image})` }}
             >
-                <div className="absolute inset-0 bg-black bg-opacity-50" />
-                <h1 className="text-white text-4xl md:text-6xl font-bold relative z-10 text-center">
-                    {category.title}
-                </h1>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
+                        {category.title}
+                    </h1>
+                </div>
             </div>
 
-            {/* ✅ Breadcrumb */}
-            <div className="mt-6 text-sm text-gray-600 px-6">
-                <Link to="/" className="hover:text-blue-600">
-                    Home
-                </Link>{" "}
-                &gt; <span className="text-blue-600 font-semibold">{category.title}</span>
-            </div>
-
-            {/* ✅ Introduction */}
-            {category.introduction && (
-                <motion.p
-                    className="text-gray-700 text-lg leading-relaxed my-10 text-center px-6 md:px-20"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                >
+            {/* Introduction */}
+            <div className="max-w-5xl mx-auto py-12 px-6 text-center">
+                <p className="text-lg text-gray-700 leading-relaxed">
                     {category.introduction}
-                </motion.p>
-            )}
+                </p>
+            </div>
 
-            {/* ✅ Features Section */}
-            {category.features && category.features.length > 0 && (
-                <section className="px-6 md:px-20 my-10">
-                    <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+            {/* Features */}
+            {category.features?.length > 0 && (
+                <div className="max-w-6xl mx-auto px-6 py-10">
+                    <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
                         Key Features
                     </h2>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc list-inside text-gray-700">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {category.features.map((feature, index) => (
-                            <li key={index}>{feature}</li>
+                            <div
+                                key={index}
+                                className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition flex items-start gap-3"
+                            >
+                                <span className="text-green-500 font-bold">✓</span>
+                                <span className="text-gray-800">{feature}</span>
+                            </div>
                         ))}
-                    </ul>
-                </section>
+                    </div>
+                </div>
             )}
 
-            {/* ✅ Type Grid */}
-            {category.types && category.types.length > 0 && (
-                <section className="my-16">
-                    <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-                        Product Types
+            {/* Types (cards) */}
+            {category.types?.length > 0 && (
+                <div className="max-w-6xl mx-auto px-6 py-12">
+                    <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
+                        Available Types
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:px-20">
-                        {category.types.map((type, index) => {
-                            // ✅ Safely create a valid typeId
-                            const safeTypeId = encodeURIComponent(
-                                type.id ||
-                                (type.name
-                                    ? type.name.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
-                                    : `type_${index}`) // fallback if name missing
-                            );
 
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        {category.types.map((t, idx) => {
+                            const type = normalizeType(t);
                             return (
-                                <motion.div
-                                    key={safeTypeId}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="relative rounded-xl overflow-hidden shadow-lg bg-white"
+                                <button
+                                    key={idx}
+                                    onClick={() => {
+                                        setActiveType(type);
+                                        setIsOpen(true);
+                                    }}
+                                    className="group text-left bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-2 focus:outline-none"
+                                    aria-label={`Open details for ${type.name}`}
                                 >
-                                    <Link to={`/category/${normalizedId}/type/${safeTypeId}`}>
-                                        <div
-                                            className="h-60 bg-cover bg-center"
-                                            style={{
-                                                backgroundImage: `url(${type.image || "/images/placeholder.webp"})`,
+                                    {type.image ? (
+                                        <img
+                                            src={type.image}
+                                            alt={type.name}
+                                            className="w-full h-48 object-cover"
+                                            onError={(e) => {
+                                                e.currentTarget.onerror = null;
+                                                e.currentTarget.src = category.image ?? "/images/placeholder.webp";
                                             }}
                                         />
-                                        <div className="p-5 text-center">
-                                            <h3 className="text-xl font-semibold text-gray-800">{type.name}</h3>
-
-                                            {type.description && (
-                                                <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-                                                    {type.description}
-                                                </p>
-                                            )}
-
-                                            {/* ✅ Subtypes */}
-                                            {type.subtypes && type.subtypes.length > 0 && (
-                                                <ul className="mt-3 text-sm text-gray-600 list-disc list-inside">
-                                                    {type.subtypes.map((sub, i) => (
-                                                        <li key={`${safeTypeId}-${i}`}>
-                                                            {typeof sub === "string" ? sub : sub.name}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
+                                    ) : (
+                                        <div className="w-full h-48 flex items-center justify-center bg-gray-100 text-gray-500">
+                                            {type.name}
                                         </div>
-                                    </Link>
-                                </motion.div>
+                                    )}
+
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-semibold mb-2 group-hover:text-green-600">
+                                            {type.name}
+                                        </h3>
+                                        <p className="text-gray-600 text-sm line-clamp-3">
+                                            {type.description ?? "Click to view details"}
+                                        </p>
+                                    </div>
+                                </button>
                             );
                         })}
                     </div>
-                </section>
+                </div>
             )}
 
-
-            {/* ✅ Applications Section */}
-            {category.applications && category.applications.length > 0 && (
-                <section className="px-6 md:px-20 mt-16">
-                    <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+            {/* Applications */}
+            {category.applications?.length > 0 && (
+                <div className="max-w-5xl mx-auto px-6 py-12">
+                    <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
                         Applications
                     </h2>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-disc list-inside text-gray-700">
+                    <ul className="list-disc list-inside text-gray-700 text-lg leading-relaxed space-y-2">
                         {category.applications.map((app, index) => (
                             <li key={index}>{app}</li>
                         ))}
                     </ul>
-                </section>
+                </div>
             )}
-        </div>
+
+            {/* Modal (shows type details) */}
+            {isOpen && activeType && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center"
+                    aria-modal="true"
+                    role="dialog"
+                >
+                    <div
+                        className="absolute inset-0 bg-black/50"
+                        onClick={() => {
+                            setIsOpen(false);
+                            setActiveType(null);
+                        }}
+                    />
+                    <div className="relative bg-white rounded-2xl max-w-3xl w-full mx-4 overflow-auto shadow-2xl">
+                        <div className="flex items-start justify-between p-4 border-b">
+                            <h3 className="text-xl font-semibold">{activeType.name}</h3>
+                            <button
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    setActiveType(null);
+                                }}
+                                className="text-gray-500 hover:text-gray-700 p-2 rounded focus:outline-none"
+                                aria-label="Close details"
+                            >
+                                ✕
+                            </button>
+                        </div>
+
+                        <div className="p-6 space-y-6">
+                            {activeType.image && (
+                                <img
+                                    src={activeType.image}
+                                    alt={activeType.name}
+                                    className="w-full h-56 object-cover rounded-md"
+                                    onError={(e) => {
+                                        e.currentTarget.onerror = null;
+                                        e.currentTarget.src = category.image ?? "/images/placeholder.webp";
+                                    }}
+                                />
+                            )}
+
+                            <div>
+                                <h4 className="font-medium mb-2">Description</h4>
+                                <p className="text-gray-700">
+                                    {activeType.description ?? "No detailed description available."}
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 className="font-medium mb-2">Subtypes</h4>
+                                {Array.isArray(activeType.subtypes) && activeType.subtypes.length > 0 ? (
+                                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                                        {activeType.subtypes.map((st, i) => (
+                                            <li key={i}>
+                                                {/* each subtype could be object or string */}
+                                                {typeof st === "string" ? st : st.name ?? JSON.stringify(st)}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p className="text-gray-500">No further subtypes available.</p>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="flex justify-end gap-3 p-4 border-t">
+                            <button
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    setActiveType(null);
+                                }}
+                                className="px-4 py-2 rounded bg-gray-100 hover:bg-gray-200"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
     );
 }
