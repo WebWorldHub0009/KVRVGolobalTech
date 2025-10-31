@@ -494,7 +494,7 @@ export const categoryDetails = {
         ]
     },
 
-    air_conditions: {
+    air_conditioners: {
         title: "Air Conditions",
         image: "/images/services/air_conditions/ac.webp",
         introduction:
@@ -522,7 +522,7 @@ export const categoryDetails = {
         ]
     },
     // 22) Elevators & Lifts
-    elevators_and_lifts: {
+    elevators: {
         title: "Elevators & Lifts",
         image: "/images/services/elevators_and_lifts/elevator.webp",
         introduction:
@@ -711,7 +711,7 @@ export const categoryDetails = {
     },
 
     // 19) Heat Pump (Hot Water System)
-    heat_pump_hot_water_system: {
+    heat_pump: {
         title: "Heat Pump (Hot Water System)",
         image: "/images/services/heat_pump/heatpump.webp",
         introduction:
@@ -799,6 +799,51 @@ export const categoryDetails = {
             "Gym and wellness center shower areas",
             "Luxury apartment and penthouse bathrooms",
             "Commercial restrooms and premium washrooms"
+        ]
+    },
+    // 21) Glass Railing & Partitions
+    glass_railing_partitions: {
+        title: "Glass Railing & Partitions",
+        image: "/images/services/glass_railing_partitions/railing.webp",
+        introduction:
+            "KVRV Global Tech designs and installs premium glass railings and partitions that combine safety, transparency, and modern aesthetics. Ideal for balconies, staircases, and interiors, our systems use high-quality tempered or laminated glass with elegant stainless steel or aluminum hardware, delivering strength and sophistication to every project.",
+        features: [
+            "Toughened or laminated glass with high load-bearing capacity",
+            "Available in frameless, semi-framed, and framed systems",
+            "Rust-proof SS 304/316 or aluminum support fittings",
+            "Clear, frosted, or tinted glass options available",
+            "Seamless installation with minimal visible hardware",
+            "Suitable for both indoor and outdoor use"
+        ],
+        types: [
+            {
+                id: "frameless_glass_railing",
+                name: "Frameless Glass Railing",
+                image: "/images/services/glass_railing_partitions/frameless.webp",
+                description: "Provides an unobstructed view and sleek appearance for modern spaces.",
+                subtypes: [{ name: "Spigot Mounted" }, { name: "Base Channel Mounted" }]
+            },
+            {
+                id: "semi_framed_glass_railing",
+                name: "Semi-Framed Glass Railing",
+                image: "/images/services/glass_railing_partitions/semi_framed.webp",
+                description: "Combines the strength of framing with the openness of glass design.",
+                subtypes: [{ name: "Top Mounted" }, { name: "Side Mounted" }]
+            },
+            {
+                id: "glass_partition_system",
+                name: "Glass Partition System",
+                image: "/images/services/glass_railing_partitions/partition.webp",
+                description: "Elegant glass partitions for offices and interiors ensuring privacy and openness.",
+                subtypes: [{ name: "Fixed Partition" }, { name: "Sliding Partition" }]
+            }
+        ],
+        applications: [
+            "Balconies and staircases in homes or apartments",
+            "Office interiors and conference rooms",
+            "Shopping malls and commercial buildings",
+            "Hotels, resorts, and luxury villas",
+            "Showrooms and corporate lobbies"
         ]
     },
 
