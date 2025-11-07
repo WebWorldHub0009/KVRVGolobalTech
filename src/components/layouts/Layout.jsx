@@ -1,6 +1,6 @@
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
-import logo from "../../assets/logo_withoutBG.png";
+import logo from "../../assets/logo_White_BG-removebg-preview.png";
 import ScrollToTop from "../common/ScrollToTop";
 import FloatingButtons from "../common/FloatingButtons";
 export default function Layout({ children }) {

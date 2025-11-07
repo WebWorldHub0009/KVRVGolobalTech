@@ -1,4 +1,3 @@
-// src/components/Hero/Hero.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -9,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 export default function Hero() {
-  // ✅ Map slide titles to their category route IDs (keeps consistency)
   const titleToIdMap = {
     "CCTV Cameras & Accessories": "cctvcameras_accessories",
     "Video Door Phone (VDP)": "video_door_phone",
@@ -54,7 +52,6 @@ export default function Hero() {
           return (
             <SwiperSlide key={index}>
               <div className="relative h-[100vh]">
-                {/* Background Image */}
                 <img
                   src={slide.img}
                   alt={slide.title}
@@ -62,18 +59,20 @@ export default function Hero() {
                   loading="lazy"
                 />
 
-                {/* Overlay Content */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 flex items-center justify-center px-6">
+                {/* Blue gradient overlay (matches logo tones) */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#001F3F]/80 via-[#003366]/40 to-[#001F3F]/90 flex items-center justify-center px-6">
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-center text-white max-w-3xl"
                   >
-                    <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
+                    {/* Gradient Title */}
+                    <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-[#00BFFF] via-[#0056B3] to-[#00BFFF]">
                       {slide.title}
                     </h1>
 
+                    {/* Subtitle */}
                     <p className="mt-4 text-base md:text-xl leading-relaxed opacity-90">
                       {slide.subtitle.split(",").map((line, i) => (
                         <span key={i} className="block">
@@ -82,9 +81,10 @@ export default function Hero() {
                       ))}
                     </p>
 
+                    {/* CTA Button */}
                     <Link
                       to={`/category/${categoryId}`}
-                      className="inline-block mt-8 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-transform transform hover:scale-105"
+                      className="inline-block mt-8 px-8 py-3 bg-gradient-to-r from-[#0056B3] via-[#007BFF] to-[#00BFFF] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
                     >
                       Explore Our Solutions
                     </Link>

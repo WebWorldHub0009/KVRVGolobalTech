@@ -7,8 +7,7 @@ const Navbar = ({ logo }) => {
     const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-    const toggleMobileDropdown = () =>
-        setIsMobileDropdownOpen(!isMobileDropdownOpen);
+    const toggleMobileDropdown = () => setIsMobileDropdownOpen(!isMobileDropdownOpen);
 
     const mobileLinks = [
         { name: "Home", link: "/" },
@@ -35,15 +34,15 @@ const Navbar = ({ logo }) => {
     ];
 
     return (
-        <nav className="bg-gray-900 text-white fixed w-full z-50 shadow-xl">
+        <nav className="bg-[#0A1F44] text-white fixed w-full z-50 shadow-lg">
             <Header />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
                 {/* Logo */}
                 <div className="flex items-center gap-4">
                     {logo && (
-                        <div className="bg-gray-900 shadow-md flex items-center justify-center rounded-full overflow-hidden
-                transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]
-                h-15 w-15 z-40">
+                        <div className="flex items-center justify-center rounded-full overflow-hidden
+                            transition-transform duration-300 hover:scale-110
+                            h-15 w-15 z-40">
                             <img src={logo} alt="KVRV Logo" className="h-16 w-16 object-contain" />
                         </div>
                     )}
@@ -51,80 +50,50 @@ const Navbar = ({ logo }) => {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-6 text-lg font-semibold">
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/"
-                    >
-                        Home
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/about"
-                    >
-                        About Us
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
+                    {["Home", "About Us", "Gallery", "Videos", "Projects", "Contact Us"].map(
+                        (item, idx) => {
+                            const link = mobileLinks.find((m) => m.name === item)?.link || "/";
+                            return (
+                                <Link
+                                    key={idx}
+                                    to={link}
+                                    className="hover:text-[#00B4FF] relative group transition-colors"
+                                >
+                                    {item}
+                                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#00B4FF] transition-all group-hover:w-full"></span>
+                                </Link>
+                            );
+                        }
+                    )}
 
-                    {/* Desktop Dropdown */}
+                    {/* Dropdown */}
                     <div className="relative group">
-                        <button className="flex items-center gap-1 hover:text-green-400 transition-colors">
+                        <button className="flex items-center gap-1 hover:text-[#00B4FF] transition-colors">
                             Products & Services
                             <span className="inline-block text-[10px] transition-transform duration-300 group-hover:rotate-180">
                                 ▼
                             </span>
                         </button>
-                        <div className="absolute z-50 flex-col bg-white text-black mt-1 p-2 rounded shadow min-w-[220px]
-                opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
-                transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                            {mobileLinks
-                                .find((item) => item.dropdown)
-                                .dropdown.map((item) => (
-                                    <Link
-                                        key={item.link}
-                                        className="block px-4 py-2 hover:bg-gray-200 rounded"
-                                        to={item.link}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
+                        <div className="absolute z-50 flex-col bg-white text-[#0A1F44] mt-1 p-2 rounded shadow min-w-[220px]
+                            opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100
+                            transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                            {mobileLinks.find((item) => item.dropdown).dropdown.map((item) => (
+                                <Link
+                                    key={item.link}
+                                    className="block px-4 py-2 hover:bg-[#E0E0E0] rounded transition-colors"
+                                    to={item.link}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
                         </div>
                     </div>
-
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/gallery"
-                    >
-                        Gallery
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/video"
-                    >
-                        Videos
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/projects"
-                    >
-                        Projects
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
-                    <Link
-                        className="hover:text-green-400 relative group transition-colors"
-                        to="/contact"
-                    >
-                        Contact Us
-                        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-400 transition-all group-hover:w-full"></span>
-                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
                     onClick={toggleMobileMenu}
-                    className="md:hidden text-3xl focus:outline-none"
+                    className="md:hidden text-3xl focus:outline-none text-[#00B4FF]"
                 >
                     {isMobileMenuOpen ? "✖" : "☰"}
                 </button>
@@ -132,7 +101,7 @@ const Navbar = ({ logo }) => {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden bg-gray-800 shadow-lg overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? "max-h-[2000px]" : "max-h-0"
+                className={`md:hidden bg-[#13294B] shadow-lg overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? "max-h-[2000px]" : "max-h-0"
                     }`}
             >
                 {mobileLinks.map((item, idx) =>
@@ -140,7 +109,7 @@ const Navbar = ({ logo }) => {
                         <div key={idx} className="px-4 py-2">
                             <button
                                 onClick={toggleMobileDropdown}
-                                className="flex justify-between w-full font-semibold text-gray-300 hover:text-green-400 transition-colors"
+                                className="flex justify-between w-full font-semibold text-gray-300 hover:text-[#00B4FF] transition-colors"
                             >
                                 {item.name}
                                 <span
@@ -162,7 +131,7 @@ const Navbar = ({ logo }) => {
                                             setIsMobileMenuOpen(false);
                                             setIsMobileDropdownOpen(false);
                                         }}
-                                        className="block px-2 py-2 hover:bg-gray-700 rounded transition-colors"
+                                        className="block px-2 py-2 hover:bg-[#1C3C6B] rounded transition-colors"
                                     >
                                         {sub.name}
                                     </Link>
@@ -174,7 +143,7 @@ const Navbar = ({ logo }) => {
                             key={idx}
                             to={item.link}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block px-4 py-4 hover:bg-gray-700 transition-colors"
+                            className="block px-4 py-4 hover:bg-[#1C3C6B] transition-colors"
                         >
                             {item.name}
                         </Link>

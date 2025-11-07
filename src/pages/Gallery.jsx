@@ -40,15 +40,16 @@ export default function Gallery() {
     const [activeImg, setActiveImg] = useState(null);
 
     return (
-        <section className="bg-gray-50 min-h-screen py-20 px-6">
+        <section className="bg-gradient-to-b from-white via-green-50 to-teal-50 min-h-screen py-20 px-6">
             {/* Header */}
             <div className="text-center mb-16">
-                <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-green-500 via-teal-400 to-blue-500 bg-clip-text text-transparent mb-4 drop-shadow-md">
                     KVRV Gallery
                 </h1>
-                <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
                     A glimpse into our innovative projects, safety installations, and smart automation solutions across various sectors.
                 </p>
+                <div className="h-1 w-32 bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             {/* Gallery Grid */}
@@ -59,16 +60,17 @@ export default function Gallery() {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                         onClick={() => setActiveImg(img)}
-                        className="relative overflow-hidden rounded-2xl cursor-pointer shadow-lg group"
+                        className="relative overflow-hidden rounded-2xl cursor-pointer shadow-xl group bg-white/80 backdrop-blur-sm border border-white/40"
                     >
                         <img
                             src={img.src}
                             alt={img.title}
-                            className="w-full h-72 object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110"
+                            className="w-full h-72 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 flex flex-col justify-end items-start p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 flex flex-col justify-end items-start p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 className="text-white text-lg font-semibold mb-1">{img.title}</h3>
-                            <div className="flex items-center gap-2 text-sm text-gray-200">
+                            <div className="flex items-center gap-2 text-sm text-teal-200">
                                 <FaCameraRetro /> View Full Image
                             </div>
                         </div>
@@ -88,7 +90,7 @@ export default function Gallery() {
                         <div className="relative max-w-5xl mx-auto p-4">
                             <button
                                 onClick={() => setActiveImg(null)}
-                                className="absolute -top-10 right-0 text-white text-3xl hover:text-gray-300"
+                                className="absolute -top-10 right-0 text-white text-3xl hover:text-teal-300 transition"
                             >
                                 <FaTimes />
                             </button>
@@ -99,13 +101,14 @@ export default function Gallery() {
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0.8, opacity: 0 }}
-                                className="rounded-2xl w-full h-auto shadow-2xl"
+                                className="rounded-2xl w-full h-auto shadow-2xl border-4 border-teal-500/20"
                             />
-                            <p className="text-center text-white mt-4 text-lg">{activeImg.title}</p>
+                            <p className="text-center text-teal-200 mt-4 text-lg font-medium">{activeImg.title}</p>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
         </section>
+
     );
 }
